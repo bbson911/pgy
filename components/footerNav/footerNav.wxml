@@ -1,0 +1,23 @@
+<!--components/footerNav.wxml-->
+<view class="footer-nav {{isIphoneX ? 'fix-iphonex':''}}">
+  <view class="footer-li {{index ? 'on' : ''}}" bindtap='naviToIndex'>
+    <view class='icon-footer index'></view>
+    发现
+  </view>
+  <view class="footer-li {{fair ? 'on' : ''}}" bindtap='naviToFair'>
+    <view class='icon-footer fair'></view>
+    商城
+  </view>
+  <view class="footer-li {{invite ? 'on' : ''}}" bindtap='naviToInvite'>
+    <view class='icon-footer attention'></view>
+    邀请
+  </view>
+  <!-- <view class="footer-li {{attention ? 'on' : ''}}" bindtap='naviToAttention'>
+    <view class='icon-footer attention'></view>
+    关注
+  </view> -->
+  <view class="footer-li {{person ? 'on' : ''}}" bindtap='naviToPerson'>
+    <view class='icon-footer person'></view>
+    个人
+  </view>
+</view>

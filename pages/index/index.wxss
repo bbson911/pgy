@@ -1,0 +1,496 @@
+/**index.wxss**/
+page{
+  background: #f2f2f2;
+  padding-bottom: 100rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+button::after{
+  outline: 0;
+  border: 0;
+}
+
+#headerFixed{
+  position: absolute;
+  top: 0;
+  left:0;
+  right: 0;
+}
+
+.banner{
+  width: 750rpx;
+  height: 324rpx;
+  display: block;
+}
+ .swipers{
+  height: 324rpx;
+} 
+/*文章列表  */
+.arrowDown,.arrowUp{
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 2rpx solid #373737;
+  border-right: 2rpx solid #373737;
+  
+}
+.scroll-nav .nav-arrow .arrowDown{
+  margin-top: 26rpx;
+  margin-left: 33rpx;
+}
+
+.black-wrap{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.15);
+  position: fixed;
+}
+.arrowDown{
+  transform: rotate(135deg);
+}
+.arrowUp{
+  transform: rotate(-45deg);
+}
+.noscroll{
+  top:80rpx;
+  left: 0px;
+  padding: 80rpx 0 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 10;
+  
+}
+.nav-arrow{
+  width: 86rpx;
+  height: 80rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ffffff;
+}
+
+.black-wrap{
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.15);
+  position: fixed;
+}
+.nav-drop{
+  position: fixed;
+  top: 80rpx;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 80rpx 0 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: rgba(0,0,0,0.15);
+  z-index: 11;
+}
+.nav-drop .drop-top{
+  position: fixed;
+  top: 80rpx;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 30rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  z-index: 1;
+  font-size: 28rpx;
+  color: #373737;
+}
+
+.nav-drop .drop-top .arrowUp{
+  margin-top: 6rpx;
+  margin-left: 32rpx;
+}
+.nav-drop .drop-item > view{
+  width: 120rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #373737;
+  padding-bottom: 40rpx;
+  margin-right: 70rpx;
+  float: left;
+}
+.nav-drop .drop-item > view image{
+  width: 78rpx;
+  height: 78rpx;
+  border: 1px solid #f3f3f3;
+  border-radius: 50%;
+}
+.nav-drop .drop-con{
+  width: 100%;
+  max-height: 694rpx;
+  background: #ffffff;
+  
+}
+.drop-item{
+  padding: 0 30rpx;
+}
+.drop-item > view:nth-child(4n){
+  margin-right: 0;
+}
+.drop-item > view > image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+}
+.drop-item > view > view{
+  text-align: center;
+  height: 32rpx;
+  overflow: hidden;
+}
+/**搜索栏**/
+.search-wrap{
+  width: 100%;
+  height: 80rpx;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+}
+.search-location{
+  float: left;
+  min-width: 136rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #000000;
+  font-size: 30rpx;
+}
+.search-location image{
+
+  width: 26rpx;
+  height: 16rpx;
+  margin-left: 9rpx;
+  
+
+}
+.search{
+  float: left;
+  margin: 10rpx 0 0 0;
+  width: 555rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  background:#eaeaea;
+  border-radius: 35rpx;
+  font-size: 30rpx;
+  color: #cfcfcf;
+}
+.icon-search{
+  float: left;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 8rpx 10rpx 0 15rpx;
+}
+
+/**滚动导航栏**/
+.nav-ul{
+  width: auto;
+  height: 80rpx;
+  background: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1rpx solid #eaeaea; 
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.nav-li{
+  display: inline-block;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin: 0 54rpx 0 0;
+  color: #373737;
+  font-size: 30rpx; 
+}
+.nav-li:nth-last-child(2){
+  margin-right: 85rpx;
+}
+.up_more{
+  width:80rpx;
+  height:79rpx;
+  position:fixed;
+  right:0;
+  margin:0;
+  z-index: 11;
+  background: #ffffff;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+.up_more image{
+  width: 20rpx;
+  float: right;
+  height: 11rpx;
+  margin-top: 35rpx;
+  display: block;
+}
+.nav-li.on{
+  color: #ff7841;
+}
+.nav-li.on .nav-li-underscore{
+  background: #ff7841;
+}
+.nav-li-underscore{
+  position: relative;
+  bottom: 4rpx;
+  margin: 0 auto;
+  width: 70%;
+  height: 4rpx;
+  background: #fff;
+}
+
+/**文章列表**/
+.article-ul{
+  position: absolute;
+  top: 160rpx;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+
+}
+.article-li:nth-of-type(1){
+  -margin-top: 10rpx;
+}
+.article-li{
+  width: 100%;
+  height: 286rpx;
+  padding: 40rpx 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.article-header{
+  width: 100%;
+  height: 32rpx;
+  line-height: 32rpx;
+  font-size: 24rpx;
+  color: #373737;
+}
+.article-avator{
+  float: left;
+  width: 32rpx;
+  height: 32rpx;
+  margin: 0 10rpx 0 0;
+}
+.article-avator image{
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+}
+.article-time{
+  float: left;
+  -float: right;
+  font-size: 24rpx;
+  color: #7e7e7e;
+}
+.article-body{
+  position: relative;
+  margin: 26rpx 0 0 0;
+}
+.article-body-left{
+  margin: 0 210rpx 0 0;
+}
+.article-title{
+  word-break: break-all;
+  word-wrap: break-word;
+  margin: 0 20rpx 0 0;
+  font-size: 34rpx;
+  color: #373737;
+  height: 76rpx;
+  line-height: 38rpx;
+  overflow: hidden;
+}
+.article-content{
+  margin: 18rpx 0 0 0;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #7e7e7e
+}
+.article-pic{
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+  border-radius: 5rpx;
+  width: 206rpx;
+  height: 156rpx;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+/* .article-pic image{
+  width: 206rpx;
+  height: 157rpx;
+} */
+.article-foot{
+  width: 100%;
+  color: #7e7e7e;
+  margin: 50rpx 0 0 0;
+  font-size: 24rpx;
+}
+.article-foot > text{
+  margin-right: 18rpx;
+}
+.red{
+  color: #ff4141;
+}
+.icon-img{
+  position: relative;
+  width: 25rpx;
+  height: 25rpx;
+  top: 4rpx;
+  margin: 0 5rpx 0 0;
+}
+
+/* loading */
+.loading{
+  width: 100%;
+  padding: 50rpx 0;
+  
+}
+.loading image{
+  display: block;
+  width: 42rpx;
+  height: 42rpx;
+  margin: 0 auto;
+  animation: circle 0.5s infinite linear;
+}
+@-webkit-keyframes circle{
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+ }
+
+ /* 没有更多数据 */
+ .noMoreData{
+   width: 100%;
+   text-align: center;
+   font-size: 24rpx;
+   color: #999;
+   line-height: 80rpx;
+   height: 80rpx;
+ }
+
+/* 暂无数据 */
+.noData{
+  padding: 130rpx 0 0 0;
+  text-align: center;
+}
+.noData image{
+  display: block;
+  margin: 0 auto;
+  width: 270rpx;
+  height: 230rpx;
+}
+.noData text{
+  font-size: 28rpx;
+  color: #373737;
+}
+
+/* 引导层 */
+.modal-content{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+}
+ .modal-guide{
+  background: rgba(0,0,0,0.8);
+} 
+.modal-guide > view{
+  width: 100%;
+  height: 1206rpx;
+  position: fixed;
+  left: 0;
+  z-index: 13;
+  overflow: hidden;
+}
+.modal-guide > view > image{
+  width: 750rpx;
+  height: 1206rpx;
+  display: block;
+  margin: 0;
+}
+.modal-guide > view > button{
+  position: absolute;
+  left: 225rpx;
+  border: 0;
+  outline: 0;
+  width: 300rpx;
+  height: 134rpx;
+   background: none; 
+}
+.modal-guide .guide-one,.modal-guide .guide-two{
+  top: 0;
+}
+.modal-guide .guide-one > button,.modal-guide .guide-two > button{
+  top: 925rpx;
+}
+.modal-guide .guide-three,.modal-guide .guide-four{
+  bottom: 0;
+}
+.modal-guide .guide-three > button,.modal-guide .guide-four > button{
+  bottom: 350rpx;
+}
+
+/* pages/authorization/authorization.wxss */
+.auth-layer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+}
+.auth-wrap{
+  width: 562rpx;
+  height: 706rpx;
+  margin: 186rpx auto 0 auto;
+}
+.auth-bg{
+  width: 562rpx;
+  height: 371rpx;
+}
+.auth-bg > image{
+  display: block;
+  width: 562rpx;
+  height: 371rpx;
+}
+.auth-content{
+  width: 562rpx;
+  min-height: 335rpx;
+  background: #fff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 0 0 15rpx 15rpx;
+}
+.auth-txt{
+  font-size: 30rpx;
+  color: #7e7e7e;
+}
+.auth-txt text{
+  color: #373737;
+}
+.auth-txt2{
+  margin: 30rpx 0 0 0;
+  font-size: 24rpx;
+  color: #b6b6b6;
+}
+.auth-btn{
+  width: 500rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #fff;
+  font-size: 34rpx;
+  background: #ff7241;
+  border: none;
+  margin: 50rpx 0 0 0;
+}
+.auth-btn::after {
+  border: 0;
+}

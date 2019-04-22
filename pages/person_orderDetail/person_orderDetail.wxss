@@ -1,0 +1,241 @@
+/* pages/person_orderDetail/person_orderDetail.wxss */
+
+page{
+  background: #f2f2f2;
+  padding-bottom: 130rpx;
+  color: #373737;
+}
+button::after{
+  border: 0;
+}
+.arrow{
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 3rpx solid #373737;
+  border-right: 3rpx solid #373737;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-left: 5rpx;
+}
+.item-space{
+  margin-top: 10rpx;
+}
+.font-airal{
+  font-family: Arial;
+}
+.colorf41{
+  color: #ff4141;
+}
+
+/*订单状态*/
+.order-status{
+  background: -webkit-linear-gradient(top, #ff7841, #ff5841);
+  height: 210rpx;
+  padding: 0 30rpx;
+}
+.order-status .status-msg{
+  width: 360rpx;
+  float: left;
+  font-size: 28rpx;
+  color: #ffffff;
+  margin: 55rpx 0 30rpx 60rpx;
+}
+.order-status .status-msg > view:first-child{
+  font-size: 38rpx;
+  margin-bottom: 6rpx;
+}
+.order-status > image{
+  height: 210rpx;
+  float: right;
+}
+.order-status > image.delivery{
+  width: 252rpx;
+}
+.order-status > image.awaitget,.order-status > image.awaitpay,.order-status > image.cancel{
+  width: 225rpx;
+}
+.order-status > image.over{
+  width: 265rpx;
+}
+
+
+/*运输状态*/
+.order-transport{
+  height: 100rpx;
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+  padding: 14rpx 30rpx;
+}
+.order-transport > image{
+  width: 29rpx;
+  height: 29rpx;
+  float: left;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+.order-transport > view{
+  width: 600rpx;
+  float: left;
+}
+.order-transport > view > view:nth-child(1){
+  font-size: 24rpx;
+  color: #ff7841;
+}
+.order-transport > view > view:nth-child(2){
+  font-size: 28rpx;
+  font-family: Arial;
+  margin-top: 10rpx;
+}
+.order-transport > .arrow{
+  float: right;
+  margin-top: 20rpx;
+}
+
+/*地址*/
+.order-address{
+  background: #ffffff;
+  padding: 34rpx 30rpx 34rpx 90rpx;
+  position: relative;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.order-address .address-user{
+  width: 100%;
+  height: 34rpx;
+  line-height: 34rpx;
+  margin-bottom: 16rpx;
+  font-size: 28rpx;
+}
+.address-user text:first-child{
+  float: left;
+}
+.address-user text:last-child{
+  float: right;
+}
+.order-address .address-add{
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.order-address .location{
+  position: absolute;
+  left: 29rpx;
+  top: 62rpx;
+  width: 30rpx;
+  height: 38rpx;
+}
+
+/*商品信息*/
+.order-select{
+  position: relative;
+  width: 100%;
+  height: 217rpx;
+  padding: 25rpx 30rpx 0;
+  background: #ffffff;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.order-select > image{
+  width: 167rpx;
+  height: 167rpx;
+  float: left;
+  margin-right: 25rpx;
+}
+.order-select .select-option{
+  width: 405rpx;
+  float: left;
+  line-height: 30rpx;
+}
+.order-select .select-option .option-item{
+  font-size: 18rpx;
+  color: #7e7e7e;
+  padding-top: 4rpx;
+}
+.order-select .select-option .option-item > text{
+  margin-right: 30rpx;
+}
+.order-select .select-num{
+  margin-top: 54rpx;
+  float: right;
+}
+.order-select .select-price{
+  position: absolute;
+  bottom: 25rpx;
+  right: 30rpx;
+  font-family: Arial;
+  font-size: 28rpx;
+}
+
+/*订单信息*/
+.order-item{
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+  width: 100%;
+  line-height: 70rpx;
+  height: 70rpx;
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.order-item > text:first-child{
+  float: left;
+  margin-right: 40rpx;
+}
+.order-item > view:last-child{
+  float: right;
+}
+.order-item > input{
+  line-height: 70rpx;
+  height: 70rpx;
+}
+
+
+/*底部提交订单*/
+.bottom-fixed{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #ffffff;
+  padding: 15rpx 30rpx 15rpx 29rpx;
+  box-sizing: border-box;
+}
+.bottom-fixed .bottom-contact{
+  float: left;
+}
+.bottom-fixed > button{
+  width: 200rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  float: right;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  outline: 0;
+  margin-left: 20rpx;
+}
+.bottom-fixed .bottom-confirm{
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  border: 0;
+  color: #ffffff;
+}
+.bottom-apply{
+  background: #ffffff;
+  border: 1rpx solid #7e7e7e;
+  color: #373737;
+}
+.bottom-fixed .bottom-contact button{
+  line-height: 70rpx;
+  height: 70rpx;
+  float: left;
+  background: #ffffff;
+  font-size: 28rpx;
+  color: #7e7e7e;
+  padding: 0 15rpx;
+}
+.icon-img{
+  width: 37rpx;
+  height: 37rpx;
+  margin-top: 16.5rpx;
+  float: left;
+}

@@ -1,0 +1,47 @@
+<!--pages/person_walletEarnings/person_walletEarnings.wxml-->
+
+<!-- 钱包 -->
+<view class="wallet-wrap">
+  <view class="wallet-title">收益金额</view>
+  <view class="wallet-money"><text>¥</text>{{account}}</view>
+</view>
+
+<view style=" margin: 10rpx 0 0 0;">
+  <view class='wallet-li'>
+    <view class="left">收益来源</view>
+    <view class='right'>{{product_name}}></view>
+  </view>
+  <view class='wallet-li'>
+    <view class="left">收益类型</view>
+    <view class='right'>{{type1}}</view>
+  </view>
+</view>
+
+<view style=" margin: 10rpx 0 0 0;">
+  <view class='wallet-li'>
+    <view class="left">创建时间</view>
+    <view class='right'>{{add_time}}</view>
+  </view>
+  <view class='wallet-li'>
+    <view class="left">余额</view>
+    <view class='right'>¥ {{current_balance}}</view>
+  </view>
+  <view class='wallet-li'>
+    <view class="left">订单号</view>
+    <view class='right'>{{order_number}}</view>
+  </view>
+  <view class='wallet-li'>
+    <view class="left">流水号</view>
+    <view class='right'>{{flow_order}}</view>
+  </view>
+  <view class='wallet-li'>
+    <view class="left">备注</view>
+    <view class='right'>{{explain}}</view>
+  </view>
+</view>
+
+<!--联系客服-->
+<button class="concat_chat" open-type="contact" style="bottom: {{btuBottom}}">
+  <image src="/assets/images/user_contact.png"></image>
+  <view>联系客服</view>
+</button>

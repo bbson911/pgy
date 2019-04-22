@@ -1,0 +1,61 @@
+<!--pages/red_wars/red_wars.wxml-->
+<!--抢红包  -->
+<view class="modal_redwars" style="display:{{modalFlag1}}">
+  <view class="click_redwars" >
+      <view class="com_Redname">商品名称商品名称</view>
+      <view class="com_Reduser">您的好友夏天成功下单</view>
+      <view class="com_timeout">2018.05.01 24:00:00后过期</view>
+      <view class="click_get" bindtap='naviToIndex'></view>
+      <view class="red_image">
+        <image src="/assets/images/getred_pocket.png"></image>
+      </view>
+  </view>
+</view>
+
+<!--商品名称以及价格  -->
+<view class="red_commodity">
+  <text class="red_name">商品名称商品名称</text>
+  <view class="red_price">
+      ￥<text>91.25</text>
+  </view>
+</view>
+<view class="get_red">
+  已领取1/2
+</view>
+<!--领取红包列表  -->
+<view class="redList">
+  <view class="income_list">
+          <view class="income_list_left">
+              <view class="incomeList_pic"><image src='/assets/images/article_pic.jpg'></image></view>
+              <view class="incomeList_admin">
+                <view>04.08 10:00</view>
+                <view class="adminWraps">夏天夏天</view>
+              </view>
+          </view>
+          <view class="income_list_right">          
+                  <view>手气最佳</view>
+                  <view class="adminMoney"><text>￥</text>33.60</view>
+          </view>
+  </view>
+  <view class="income_list">
+          <view class="income_list_left">
+              <view class="incomeList_pic"><image src='/assets/images/article_pic.jpg'></image></view>
+              <view class="incomeList_admin">
+                <view>04.08 10:00</view>
+                <view class="adminWraps">夏天夏天</view>
+              </view>
+          </view>
+          <view class="income_list_right">          
+                  <view></view>
+                  <view class="adminMoney"><text>￥</text>33.60</view>
+          </view>
+  </view>
+
+</view>
+<!--炫耀一下/抢下一个  -->
+<view class="next_redwars">
+  <view class="show_red" bindtap='naviToIndexshow'>炫耀一下</view>
+  <view class="getNext_red" bindtap='click_showRed'>抢下一个</view>
+</view>
+
+

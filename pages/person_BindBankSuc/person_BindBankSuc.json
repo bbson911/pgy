@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "银行卡",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

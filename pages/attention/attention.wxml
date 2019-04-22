@@ -1,0 +1,63 @@
+<!--pages/attention/attention.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<movable-view class="movable_viewstyle" style="display:{{modalFlag}}" bindtap='selectClose'> 
+<picker-view mode='selector' range='{{chooseArr}}' indicator-style="height: 50rpx;" style="width: 100%; height:500rpx; text-align:center;z-index:99999;position:fixed;background:white;bottom:0px;" value="{{value}}" bindchange="bindChange">
+    <view class="picker_titles">
+      <view class="navigator_left" bindtap='selectClose'>取消</view>
+      <view class="navigator_right" bindtap='selectTap'>确定</view>
+      <label class="navigator_center">请选择</label>
+  </view>
+    <picker-view-column>
+      <view wx:for="{{days}}"  data-id="{{item.id}}" class="choise_value" >{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+
+</movable-view>
+<view id="headerFixed">
+  <!--关注 头部-->
+  <view  class="attention_wrap">
+    <view class="attention_search" bindtap='showSelect' >
+      {{days[index].name}}
+      <image src='/assets/images/attention_up.png'></image>
+    </view>
+    <view class="attention_open" bindtap='searchAttention'>
+        <image src='/assets/images/search_open.png'></image>
+    </view>
+  </view>
+</view>
+
+  <!--关注 文章部分-->
+<block wx:if="{{attentionList}}">
+   <scroll-view scroll-y class="attention_article" bindscrolltolower="lower" scroll-top="{{scrollTop}}" style='padding-bottom:{{btnBottom}}'>
+      <view class="attention_list" bindtap='naviToIndex' wx:for="{{attentionList}}" data-id="{{item.id}}">
+        <view class="attention_body">
+          <view class="attention_left_body">
+            <view class="attention_left_title">{{common.titleFr(item.name,26)}}</view>
+            <view class="attention_left_content">
+                <image class="icon-img" style="width:25rpx;height:26rpx;" src='/assets/images/eyexx.png'></image>
+                <text>{{item.showNums}}</text>
+                <image class="icon-img"  src='/assets/images/cartxx.png'></image>
+                <text>{{item.number}}</text>
+                <image class="icon-img" style="width:25rpx;height:25rpx;"  src='/assets/images/moneyxx.png'></image>
+                <text>{{common.moneyFr(item.commission_account)}}</text>
+            </view>
+          </view>
+          <view class="attention_right_body" style="background-image: url({{item.img_path}})">
+            <!-- <image src='{{item.img_path}}'></image> -->
+          </view>
+        </view>
+      </view>
+      <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+      <view class="noMoreData" wx:if="{{page!=1 && nodataStatus}}">没有更多数据了</view> 
+  </scroll-view> 
+  </block>
+  <block wx:else>
+    <view class="aboutContents" >
+    <image src="/assets/images/aboutContent.png"></image>
+    <view>暂无关注的内容</view>
+    <view bindtap="goIndex">前往发现感兴趣的内容</view>
+  </view>
+  </block>
+  <!--底部导航-->
+<!-- <footer-nav></footer-nav> -->
+

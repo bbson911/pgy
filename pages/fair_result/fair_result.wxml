@@ -1,0 +1,34 @@
+<!--pages/fair_result/fair_result.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+
+<!--支付结果-->
+<view class="order-result">
+  <image src="/assets/images/success.png"></image>
+  <view class="result-state">支付成功</view>
+  <view class="result-msg">你已成功购买商品请耐心等待商家发货</view>
+</view>
+
+<!--兑换码-->
+<block wx:if="{{viList.length}}">
+  <view class="order-code" style="margin-bottom: 0;">
+    <text>您的商品兑换码</text>
+  </view>
+  <view style="width:100%;  padding:0 30rpx; margin-bottom:10rpx; background:#ffffff; overflow:hidden; font-size:28rpx;word-wrap:break-word ">
+    <text wx:for="{{viList}}" style=" margin: 0 10rpx 0 0;">{{item.code_group}}</text>
+  </view>
+</block>
+
+<!--商品信息-->
+<view class="order-select">
+  <image src="{{img_path}}"></image>
+  <view class="select-option">
+    <text>{{common.titleFr(name,32)}}</text>
+    <view class="option-item" ><text>{{extra}}</text></view>
+    <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(selling_price)}}</view>
+  </view>
+  <view class="select-num">X{{num}}</view>
+</view>
+<view class="order-total">实付：<view class="total-price"><text class="price-unit">¥</text> {{common.moneyFr(selling_price*num)}}</view></view>
+
+<!--查看更多-->
+<button class="see-more" bindtap="launToFair">查看更多</button>

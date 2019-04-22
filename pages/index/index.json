@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "聚焦蒲公英",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "footer-nav": "../../components/footerNav/footerNav"
+  }
+}

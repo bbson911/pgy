@@ -1,0 +1,46 @@
+<!--pages/person_failure/person_failure.wxml-->
+<!--收益详情-已失效  -->
+<wxs src="../../filter/common.wxs" module="common" />
+<view class="get_pagfor">
+  <view>收益金额</view>
+  <view class="pagfor_money"><text>￥</text>{{account}}</view>
+  <image src="/assets/images/pgyshix.png"></image>
+</view>
+<!--收益详情  -->
+<view class="pagfor_details">
+  <view class="pagfor_detailList">
+    <view class="pagfor_lefts">收益来源</view>
+    <view class="pagfor_rights">{{common.titleFr(product_name,20)}}></view>
+  </view>
+  <view class="pagfor_detailList">
+    <view class="pagfor_lefts">收益类型</view>
+    <view class="pagfor_rights">{{title}}</view>
+  </view>
+  
+</view>
+<view class="pagfor_details">
+ <view class="pagfor_detailList">
+    <view class="pagfor_lefts">创建时间</view>
+    <view class="pagfor_rights">{{add_time}}</view>
+  </view>
+  <view class="pagfor_detailList">
+    <view class="pagfor_lefts">订单号</view>
+    <view class="pagfor_rights">{{order_number}}</view>
+  </view>
+  <view class="pagfor_detailList">
+    <view class="pagfor_lefts">失效时间</view>
+    <view class="pagfor_rights">{{unlock_time}}</view>
+  </view>
+  <view class="pagfor_detailList">
+    <view class="pagfor_lefts">备注</view>
+    <view class="pagfor_rights"></view>
+  </view>
+</view>
+<!--联系客服  -->
+<button open-type="contact">
+  <view class="concat_chat">
+    <image src="/assets/images/contants.png"></image>
+    <view>联系客服</view>
+  </view>
+</button>
+

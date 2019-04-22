@@ -1,0 +1,11 @@
+<!--pages/person_pwdNext/person_pwdNext.wxml-->
+
+<!--密码信息-->
+<view class="order-item item-space">
+  <input type="password" placeholder="请输入您的新密码（8-18位，英文或数字组合）" bindinput='bindPasswd' bindblur='bindBlur'></input>
+</view>
+<view class="order-item">
+  <input type="password" placeholder="请再次输入您的新密码（两次保持一致）" bindinput='bindPassConfirm' ></input>
+</view>
+<button class="button-confirm" bindtap="goChangeMobile">完成</button>
+

@@ -1,0 +1,23 @@
+<!--pages/person_BindBankSuc/person_BindBankSuc.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!-- 银行卡 -->
+<view class="bankCard">
+  <view class="changeCard">
+    <image src="{{bankcardicon}}"></image>
+    <view> 
+      <view class="bankName">
+        <view>{{bankcardname}}</view>
+        <view>储蓄卡</view>
+      </view>
+      <view class="bankNumber">{{common.bankcard2Fr(bankcard)}}</view>
+      <view class="changeBtn" bindtap='changeBankCard'>更换银行卡<icon class="arrow"></icon></view>
+    </view>
+  </view>
+</view>
+
+<!-- 联系客服 -->  
+<button class="contact-us" open-type="contact" style="bottom: {{btuBottom}}">
+  <image src="/assets/images/user_contact.png"></image>
+  <text>联系客服</text>
+</button>

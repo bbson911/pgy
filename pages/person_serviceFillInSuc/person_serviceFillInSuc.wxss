@@ -1,0 +1,136 @@
+/* pages/person_serviceFillInSuc/person_serviceFillInSuc.wxss */
+
+page{
+  background: #f2f2f2;
+  padding-bottom: 130rpx;
+  color: #373737;
+}
+button::after{
+  border: 0;
+}
+
+/*订单状态*/
+.service-status{
+  background: #ff7541;
+  height: 243rpx;
+  padding: 55rpx 30rpx 20rpx;
+  font-size: 24rpx;
+  color: #ffffff;
+  line-height: 40rpx;
+}
+.service-status .status-tit{
+  width: 100%;
+  line-height: 43rpx;
+  height: 43rpx;
+  font-size: 34rpx;
+  margin-bottom: 30rpx;
+}
+.service-status .status-tit > image{
+  float: left;
+  width: 43rpx;
+  height: 43rpx;
+  margin-right: 20rpx;
+}
+.service-status .status-tit > text{
+  float: left;
+}
+
+/*商品信息*/
+.order-select{
+  position: relative;
+  width: 100%;
+  height: 217rpx;
+  padding: 25rpx 30rpx;
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea; 
+  box-sizing: border-box;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+.order-select > image{
+  width: 167rpx;
+  height: 167rpx;
+  float: left;
+  margin-right: 25rpx;
+}
+.order-select .select-option{
+  width: 405rpx;
+  float: left;
+  line-height: 30rpx;
+}
+.order-select .select-option .option-item{
+  font-size: 18rpx;
+  color: #7e7e7e;
+  margin: 10rpx 0;
+}
+.order-select .select-option .option-item > text{
+  margin-right: 30rpx;
+}
+.order-select .select-num{
+  margin-top: 74rpx;
+  float: right;
+}
+.order-select .select-price{
+  position: absolute;
+  bottom: 25rpx;
+  right: 30rpx;
+  font-family: Arial;
+  font-size: 28rpx;
+  color: #ff4141;
+}
+
+/*退货原因*/
+.service-item{
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+  width: 100%;
+  line-height: 70rpx;
+  /* height: 70rpx; */
+  padding: 0 30rpx;
+  overflow: hidden;
+  font-size: 28rpx;
+  color: #373737;
+}
+.service-item > text:first-child{
+  float: left;
+  margin-right: 40rpx;
+}
+.service-item > view:last-child{
+  float: right;
+}
+
+/* 商品问题描述 */
+.item-qa > view{
+  width: 100%;
+}
+.item-qa > view:nth-child(2){
+  line-height: 32rpx;
+  font-size: 24rpx;
+  padding: 10rpx 0;
+}
+.item-qa > view:last-child{
+  padding: 30rpx 0;
+}
+.item-qa > view:last-child > image{
+  float: left;
+  width: 122rpx;
+  height: 122rpx;
+  margin-right: 20rpx;
+}
+.item-qa > view:last-child > image:last-child{
+  margin: 0;
+}
+
+/* 返回售后服务 */
+.back-service{
+  width: 400rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  outline: 0;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  border: 0;
+  color: #ffffff;
+  margin: 122rpx auto 0;
+}

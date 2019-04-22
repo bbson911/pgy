@@ -1,0 +1,222 @@
+/* pages/attention_detail/attention_detail.wxss */
+page{
+  background: #f2f2f2;
+ 
+}
+/*关注 文章列表*/
+
+.attention_list{
+  width: 100%;
+  height: 205rpx;
+  background: #ffffff;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eaeaea;
+  margin-top: 10rpx;
+}
+.attention_left_body{
+  float:left ;
+  width: 485rpx;
+  height: 144rpx;
+  position: relative;
+
+}
+.attention_left_content{
+   position: absolute;
+    height: 35rpx;
+    line-height: 35rpx;
+    bottom: 0rpx;
+ 
+}
+.attention_right_body{
+  float: right;
+  width: 190rpx;
+  height: 144rpx;
+  background-size: cover;
+  background-position: center;
+}
+
+.attention_left_title{
+font-size: 28rpx;
+line-height: 38rpx;
+color: #373737;
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:2;
+}
+.icon-img:nth-of-type(1){
+  margin: 8rpx 5rpx auto 0rpx;
+}
+.icon-img:nth-of-type(2){
+  margin: 8rpx 5rpx auto 36rpx;
+  width: 33rpx;
+  height: 25rpx;
+  position:relative;
+  top: 3rpx;
+}
+.icon-img{
+  width: 33rpx;
+  height: 25rpx;
+  margin: 8rpx 5rpx auto 36rpx;
+  position:relative;
+  top: 4rpx;
+}
+
+.attention_left_content text{
+  font-size: 24rpx;
+  color: #373737;
+}
+/*我的收益列表  */
+.attention_income{
+  margin-top: 10rpx;
+}
+.income_title{
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 100%;
+  padding: 0rpx 30rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  background: #ffffff;
+}
+.income_title >view{
+  font-size: 28rpx;
+  color: #373737;
+}
+.income_title_right,.income_list_right{
+  float: right;
+}
+.income_title_right{
+  padding-right: 38rpx;
+  width: 162rpx;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAOCAYAAAArMezNAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA39pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpkNzcyMzVkZi1lY2FkLTkzNDQtYTg0NC0wOWZkOGFkMzFhNjYiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjU2RERGRDM0RjcwMTFFODgyMjM5MzJDODU5QkE5QzgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjU2RERGRDI0RjcwMTFFODgyMjM5MzJDODU5QkE5QzgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOmJhOWU5NGVkLTE2ZjYtNDY0OC05OWJhLWM0MjMxMGI3YmY5YiIgc3RSZWY6ZG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjliMDY3N2YxLTg4MmItNGI0MS1iNTIxLTlhYWZlNWY5NTFiNSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgjJrCEAAAE/SURBVHjarNMxKIRhHMfx515vksVkewex6Eps7yCDSTKQhFGms1h0ZSDpsslgsZEwGYSYcQwGt5yZxSVZlLrylvg+9bt6u17v++Ke+txwz//5vc/z/p834/v+jTHmHGumMWMdww4/FRQw3oDQWSzg1gbP4B47yP4jtB9buEbOBlcxhg8coe0PoZ7WPunkgaOJB0yjCwfI/CK0FSdo1gZf7Z9NnufVCh7xhnkFX6QItXX7GMQUirUJt65wE31YRgnHCcFLmEQep+EJJ6I4Z7uKXXTHhNpjr2JbV8wkBQdqwHtMM3uwp6PPRT3V+WE3z5hAh3Yebma7XtGLaoKogHDz6kdF12cRX7hU5+0N6MSQGh453ITm2N32YgV3GMEARlGOW+imuFJ5vdNDtOiTPUtalCb4U3f0Ss3aSPPVfAswAIqsPNhacE02AAAAAElFTkSuQmCC)right no-repeat;
+  background-size: 22rpx 14rpx;
+  text-align: right;
+}
+.income_title_left,.income_list_left{
+  float:left;
+}
+.income_list{
+  width: 100%;
+  height: 120rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  padding: 26rpx 30rpx;
+  background: #ffffff;
+}
+.incomeList_pic{
+  width: 68rpx;
+  height: 68rpx;
+  float: left;
+
+}
+.income_list_left{
+  width: 230rpx;
+}
+.income_list_right{
+  color: #373737;
+  font-size: 24rpx;
+  text-align: right;
+}
+.income_list_right .adminMoney{
+  color: #ff4141;
+  font-size: 30rpx;
+}
+.incomeList_pic image{
+   width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+}
+.incomeList_admin{
+  font-size: 24rpx;
+  color: #373737;
+  float: right;
+  line-height: 32rpx;
+  height: 68rpx;
+  margin-top: 6rpx; 
+}
+.incomeList_admin .adminWraps{
+ color: #373737;
+}
+/*更多收益信息  */
+.footer_more{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #373737;
+  font-size: 28rpx;
+  background: #ffffff;
+}
+
+/*弹出层  */
+.picker_titles{
+  height:100rpx;
+  line-height:100rpx;
+  border-bottom:1rpx solid #eaeaea;
+  width:100%;
+  position:absolute;
+  z-index:100000;
+  bottom:363rpx;
+  background:#ffffff;
+}
+.navigator_left{
+  position:absolute;
+  left:30rpx;
+  font-size:34rpx;
+  color:#373737;
+}
+.navigator_right{
+  position:absolute;
+  right:30rpx;
+  font-size:34rpx;
+  color:#ff7841;
+  border-radius: 0rpx;
+}
+.navigator_center{
+  position:absolute;
+  text-align: left;
+  left: 324rpx;
+  font-size:34rpx;
+  color:#373737;
+  width: 103rpx;
+}
+.movable_viewstyle{
+  width:100%;
+  background:rgba(0,0,0,0.3);
+  height:100%;
+  position:fixed;
+  top:0rpx;
+  left:0rpx;
+  z-index:999;
+}
+.choise_value{
+  height:80rpx;
+  line-height:75rpx;
+  border:none;
+  font-size:30rpx;
+  width:100%;
+  display:inline-block;
+}
+.noAbout {
+  width: 100%;
+  min-height: 920rpx;
+  background: #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+.noAbout image{
+  margin:212rpx auto auto auto;
+  width:270rpx;
+  height: 230rpx; 
+  display: block;
+}
+.noAbout text{
+  text-align: center;
+  font-size: 28rpx;
+  color: #373737;
+}

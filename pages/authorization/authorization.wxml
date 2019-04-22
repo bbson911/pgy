@@ -1,0 +1,16 @@
+<!--pages/authorization/authorization.wxml-->
+<view class="auth-wrap">
+  <view class="auth-bg">
+    <image src='/assets/images/auth_bg.png'></image>
+  </view>
+  <view class="auth-content">
+    <view class="auth-txt">
+    授权 <text> 聚焦蒲公英 </text> 获取以下信息为你服务
+    </view>
+    <view class="auth-txt2">
+    · 获取你的公开信息（昵称、头像、性别等）
+    </view>
+    <button class="auth-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">同意授权</button>
+  </view>
+</view>
+

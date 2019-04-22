@@ -1,0 +1,45 @@
+<!--pages/person_serviceFillInRights/person_serviceFillInRights.wxml-->
+
+<!-- 商品信息 -->
+<view class="order-select">
+  <image src="{{detailData.contents.goods.img_path}}"></image>
+  <view class="select-option">
+    <text>{{detailData.contents.goods.product_name}}</text>
+    <view class="option-item">{{detailData.contents.specifications}}</view>
+  </view>
+  <view class="select-price"><text class="price-unit">¥</text> {{detailData.account}}</view>
+  <view class="select-num">X{{detailData.number}}</view>
+</view>
+    
+<!-- 退款原因 -->
+<view class="order-refund">
+  <view class="refund-title">
+    <text>售后原因</text>
+    <picker bindchange="bindPickerChange" value="{{pIndex}}" range="{{refundType}}">
+      <view class="picker">
+        {{refundType[pIndex]}}<icon class="arrow"></icon>
+      </view>
+    </picker>
+  </view>
+  <view class="refund-text">
+    <textarea placeholder="请描述商品问题" maxlength="-1" value="{{problem}}" bindinput="inputDesc" />
+  </view>
+</view>
+
+<!-- 上传照片 -->
+<view class="order-images">
+  <view class="images-title">
+    上传照片 <text>(最多上传5张图片)</text>
+  </view>
+  <view class="images-list">
+    <view><image src="/assets/images/addImage.png" bindtap="uploadImg">上传图片</image></view>
+    <view wx:for="{{tempFilePaths}}" wx:key="index">
+      <image src="{{item}}"></image>
+      <image src="/assets/images/delImage.png" bindtap="deleteImg" data-id="{{index}}"></image>
+    </view>
+  </view>
+  
+</view>
+
+<!-- 提交 -->
+<button class="option-buy {{disabled==true?'disabled':''}}" bindtap="addProductAfterSales" data-id="{{detailData.product_order_id}}">提交</button>

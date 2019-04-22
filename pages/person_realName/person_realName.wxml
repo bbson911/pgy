@@ -1,0 +1,12 @@
+<!--pages/person_realName/person_realName.wxml-->
+
+<!--实名信息-->
+
+  <view class="order-item item-space">
+    <text>真实姓名</text>
+    <view>{{realname}}</view>
+  </view>
+  <view class="order-item">
+    <text>身份证</text>
+    <view>{{idno}}</view>
+  </view>

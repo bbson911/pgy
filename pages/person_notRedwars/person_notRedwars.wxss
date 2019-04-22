@@ -1,0 +1,57 @@
+/* pages/not_redwars/not_redwars.wxss */
+page{
+  background: #f2f2f2;
+  padding-bottom: 100rpx;
+}
+.no_redwars{
+  height: 208rpx;
+  width: 100%;
+ 
+}
+.no_redwars image{
+display: block;
+width: 140rpx;
+height: 137rpx;
+margin-left: 23rpx;
+}
+.no_redwars .no_redpocket{
+  width: 194rpx;
+  height: 207rpx;
+   margin: 209rpx auto auto auto;
+   font-size: 30rpx;
+   color: #373737;
+}
+.no_redtitle{
+  line-height: 30rpx;
+  height: 30rpx;
+  margin-top: 40rpx;
+}
+.no_redbutton{
+  margin-top: 212rpx;
+   width: 100%;
+  padding-left: 116rpx;
+  padding-right: 116rpx;
+  box-sizing: border-box; 
+}
+.no_redlefts{
+  float: left;
+   color: #373737;
+   width: 198rpx;
+    text-align: center;
+  height: 68rpx;
+  line-height: 68rpx;
+  border: 1px solid #7e7e7e;
+  font-size: 34rpx;
+   border-radius: 40rpx;
+}
+.no_redrights{
+  float: right;
+  color: #373737;
+   width: 198rpx;
+   line-height: 68rpx;
+   text-align: center;
+  height: 68rpx;
+  border: 1px solid #7e7e7e;
+  font-size: 34rpx;
+  border-radius: 40rpx;
+}

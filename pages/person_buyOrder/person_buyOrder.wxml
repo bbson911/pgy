@@ -1,0 +1,88 @@
+<!--pages/person_buyOrder/person_buyOrder.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<view id="headerFixed">
+  <!--滚动导航栏-->
+  <scroll-view scroll-x="true" class="nav-ul">
+    <view class="nav-li {{indexs == 0 ? 'on' : ''}}" bindtap="choseTxtColor" data-status="0">
+      全部
+      <view class="nav-li-underscore"></view>
+    </view>
+    <view class="nav-li {{indexs == 1 ? 'on' : ''}}" bindtap="choseTxtColor" data-status="1">
+      待付款
+      <view class="nav-li-underscore"></view>
+    </view>
+    <view class="nav-li {{indexs == 2 ? 'on' : ''}}" bindtap="choseTxtColor" data-status="2">
+      待收货
+      <view class="nav-li-underscore"></view>
+    </view>
+    <view class="nav-li {{indexs == 3 ? 'on' : ''}}" bindtap="choseTxtColor" data-status="3">
+      已完成
+      <view class="nav-li-underscore"></view>
+    </view>
+    <view class="nav-li {{indexs == 4 ? 'on' : ''}}" bindtap="choseTxtColor" data-status="4">
+      已取消
+      <view class="nav-li-underscore"></view>
+    </view>
+  </scroll-view>
+</view>
+
+<!--订单列表-->
+<scroll-view scroll-y class="order-ul" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+  <view class="order-li" bindtap="naviToDetail" data-choose_specification_id="{{item.choose_specification_id}}" data-id="{{item.id}}" wx:for="{{orderList}}" wx:key="index">
+    
+    <!-- 头 -->
+    <view class="order-top">
+      <text>{{common.formatTime(item.add_time)}}</text>
+
+      <!-- 待付款 -->
+      <view class="status" wx:if="{{item.order_status==1}}"><image src="/assets/images/user_wait.png"></image>待付款(剩余{{common.timeDiff(item.end_time)}})</view>
+      <!-- 待收货、已完成、已取消 -->
+      <text wx:else>{{item.status_name}}</text>
+
+    </view>
+    
+    <!-- 内容 -->
+    <view class="order-select">
+      <image src="{{item.img_path}}"></image>
+      <view class="select-option">
+        <text>{{common.titleFr(item.product_name,32)}}</text>
+        <view class="option-item"><text>{{item.specifications}}</text></view>
+        <view class="option-item"><text>{{item.explain}}</text></view>
+      </view>
+      <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(item.account)}}</view>
+      <view class="select-num">X{{item.number}}</view>
+    </view>
+
+    <!-- 底 -->
+    <!-- 待付款 -->
+    <view class="order-bottom" wx:if="{{item.order_status==1}}">
+      <view catchtap="cancelOrder" data-id="{{item.id}}">取消</view>
+      <view catchtap="goPay" data-product_id="{{item.product_id}}" data-goods_type="{{item.goods_type}}" data-num="{{item.number}}" data-product_order_id="{{item.product_order_id}}" data-choose_specification_id="{{item.choose_specification_id}}" data-id="{{item.id}}">立即付款</view>
+    </view>
+    <!-- 待发货 -->
+    <!-- <view class="order-bottom" wx:if="{{item.order_status==2}}">
+      <view catchtap="cancelOrder" data-id="{{item.id}}">取消</view>
+      <view>提醒发货</view>
+    </view> -->
+    <!-- 待收货 -->
+    <view class="order-bottom" wx:if="{{item.order_status==3}}">
+      <!-- <view>查看物流</view> -->
+      <view catchtap="confirmReceipt" data-id="{{item.id}}">确认收货</view>
+    </view>
+    <!-- 已取消 -->
+    <view class="order-bottom" wx:if="{{item.order_status==4 || item.order_status==5 || item.order_status==7}}">
+      <view catchtap="delOrder" data-id="{{item.id}}">删除</view>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+
+</scroll-view>

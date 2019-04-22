@@ -1,0 +1,51 @@
+/* pages/authorization/authorization.wxss */
+page{
+  background: #f2f2f2;
+}
+.auth-wrap{
+  width: 562rpx;
+  height: 706rpx;
+  margin: 186rpx auto 0 auto;
+}
+.auth-bg{
+  width: 562rpx;
+  height: 371rpx;
+}
+.auth-bg > image{
+  display: block;
+  width: 562rpx;
+  height: 371rpx;
+}
+.auth-content{
+  width: 562rpx;
+  min-height: 335rpx;
+  background: #fff;
+  padding: 30rpx;
+  box-sizing: border-box;
+  border-radius: 0 0 15rpx 15rpx;
+}
+.auth-txt{
+  font-size: 30rpx;
+  color: #7e7e7e;
+}
+.auth-txt text{
+  color: #373737;
+}
+.auth-txt2{
+  margin: 30rpx 0 0 0;
+  font-size: 24rpx;
+  color: #b6b6b6;
+}
+.auth-btn{
+  width: 500rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  color: #fff;
+  font-size: 34rpx;
+  background: #ff7241;
+  border: none;
+  margin: 50rpx 0 0 0;
+}
+.auth-btn::after {
+  border: 0;
+} 

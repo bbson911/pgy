@@ -1,0 +1,63 @@
+<!--pages/location/location.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!-- 搜索栏 -->
+<view class="location-search-wrap">
+  <view class="location-search">
+    <input type='text' bindinput='searchInput' placeholder-style='font-size: 28rpx; color: #cfcfcf; text-align: center;' placeholder='输入城市名查询' confirm-type='search' bindconfirm='regionSearch'></input>
+  </view>
+</view>
+
+<scroll-view wx:if="{{searchShow}}" class="city-box" scroll-y>
+  <!-- 城市列表 -->
+  <view class="city-initial-li" wx:for="{{searchList}}" bindtap='regionSelected' data-id="{{item.id}}">{{item.name}}</view>
+</scroll-view>
+
+<scroll-view wx:else class="city-box" scroll-y scroll-into-view="{{toView}}" scroll-top="">
+  <!-- 城市配置 -->
+  <view class="city-config">
+
+    <!-- <view class="city-wrap">
+    <view class='city-title'>当前定位城市</view>  
+    <view class="city-ul">
+      <view class="city-li">上海</view>
+    </view>
+  </view>
+
+  <view class="city-wrap">
+    <view class='city-title'>历史访问城市</view>  
+    <view class="city-ul">
+      <view class="city-li">杭州</view>
+      <view class="city-li">上海</view>
+      <view class="city-li">宁波</view>
+      <view class="city-li">杭州</view>
+      <view class="city-li">上海</view>
+      <view class="city-li">宁波</view>
+    </view>
+  </view> -->
+
+    <view class="city-wrap">
+      <view class='city-title'>国内热门城市</view>
+      <view class="city-ul">
+        <view class="city-li" data-id="0" bindtap='regionSelected'>全国</view>
+        <view class="city-li" wx:for="{{hotCity}}" data-id="{{item.id}}" bindtap='regionSelected'>{{common.titleFr(item.name,4)}}</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 城市列表 -->
+  <view class="city-list" style='padding-bottom: {{btuBottom}}'>
+    <block wx:for="{{allCity}}" wx:key="index" wx:for-item="all">
+      <view id="{{index}}" class="city-initial">{{index}}</view>
+      <view class="city-initial-li" wx:for="{{all}}" wx:for-item="city" bindtap='regionSelected' data-id="{{city.id}}">{{city.name}}</view>
+    </block>
+  </view>
+</scroll-view>
+
+
+<!-- 字母列表 -->
+<view class="city-letter" wx:if="{{!searchShow}}">
+  <block wx:for="{{allCity}}" wx:key="index" wx:for-item="all">
+    <view class="city-letter-li" bindtap="choiceWordindex" data-wordindex="{{index}}">{{index}}</view>
+  </block>
+</view>

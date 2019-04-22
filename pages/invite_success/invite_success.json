@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "蒲公英邀请函",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

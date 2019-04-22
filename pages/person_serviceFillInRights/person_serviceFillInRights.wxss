@@ -1,0 +1,150 @@
+/* pages/person_serviceFillInRights/person_serviceFillInRights.wxss */
+page{
+  background: #f2f2f2;
+  padding-top: 10rpx;
+}
+.price-unit{
+  font-size: 20rpx;
+}
+.arrow{
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 2rpx solid #373737;
+  border-right: 2rpx solid #373737;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-left: 10rpx;
+}
+button::after {
+  border: 0;
+} 
+
+
+/*商品信息*/
+.order-select{
+  position: relative;
+  width: 100%;
+  height: 217rpx;
+  padding: 25rpx 30rpx;
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea; 
+  box-sizing: border-box;
+  font-size: 24rpx;
+}
+.order-select > image{
+  width: 167rpx;
+  height: 167rpx;
+  float: left;
+  margin-right: 25rpx;
+}
+.order-select .select-option{
+  width: 405rpx;
+  float: left;
+  line-height: 30rpx;
+}
+.order-select .select-option .option-item{
+  font-size: 18rpx;
+  color: #7e7e7e;
+  margin: 10rpx 0;
+}
+.order-select .select-option .option-item > text{
+  margin-right: 30rpx;
+}
+.order-select .select-num{
+  margin-top: 74rpx;
+  float: right;
+}
+.order-select .select-price{
+  position: absolute;
+  bottom: 25rpx;
+  right: 30rpx;
+  font-family: Arial;
+  font-size: 28rpx;
+  color: #ff4141;
+}
+
+.order-refund .refund-title,.order-images .images-title{
+  width: 100%;
+  line-height: 70rpx;
+  height: 70rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+/* 退款原因 */
+.order-refund{
+  background: #ffffff;
+  margin-top: 10rpx;
+}
+.order-refund .refund-title{
+  border-bottom: 1rpx solid #eaeaea; 
+}
+.refund-title > text{
+  color: #373737;
+  width: 30%;
+  float: left;
+}
+.refund-title .picker{
+  color: #7e7e7e;
+  float: right;
+}
+.refund-text{
+  padding: 20rpx 30rpx;
+  border-bottom: 1rpx solid #eaeaea; 
+}
+.refund-text textarea{
+  width: 100%;
+  height: 210rpx;
+  font-size: 24rpx;
+  color: #373737;
+}
+
+/* 上传照片 */
+.order-images{
+  width: 100%;
+  background: #ffffff;
+}
+.order-images .images-title > text{
+  color: #7e7e7e;
+}
+.order-images .images-list{
+  padding: 10rpx 30rpx;
+}
+.order-images .images-list > view{
+  width: 122rpx;
+  height: 142rpx;
+  margin: 0 20rpx 0 0;
+  display: inline-block;
+  position: relative;
+}
+.order-images .images-list > view:nth-child(5){
+  margin-right: 0;
+}
+.order-images .images-list > view > image:nth-child(1){
+  width: 100%;
+  height: 122rpx;
+}
+.order-images .images-list > view > image:nth-child(2){
+  width: 25rpx;
+  height: 25rpx;
+  position: absolute;
+  top: -12rpx;
+  right: -12rpx;
+}
+
+
+/* 提交 */
+.option-buy{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  border-radius: 50rpx;
+  margin: 150rpx auto;
+}
+.option-buy.disabled{
+  background: #cfcfcf;
+}
+

@@ -1,0 +1,70 @@
+/* pages/register_bandPhone/register_bandPhone.wxss */
+/*记录*/
+page{
+  background: #f2f2f2;
+}
+.order-msg,.order-item{
+  width: 100%;
+  line-height: 50rpx;
+  padding: 25rpx 30rpx;
+  font-size: 30rpx;
+  color: #373737;
+  overflow: hidden;
+}
+.order-item{
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.order-item > text:first-child{
+  width: 150rpx;
+}
+.order-item > view:last-child{
+  width: 510rpx;
+  text-align: right;
+}
+.order-item input{
+  line-height: 40rpx;
+  height: 40rpx;
+}
+.order-item > input{
+  width: 100%;
+}
+.order-item > view > input{
+  width: 496rpx;
+}
+.colorf41{
+  color: #ff4141;
+}
+.color004{
+  color: #0048cd;
+}
+/*按钮*/
+.button-confirm{
+  width: 400rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  outline: 0;
+  margin: 150rpx auto 50rpx;
+  background: #cfcfcf;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841); 
+  border: 0;
+  color: #ffffff;
+}
+
+.disabled{
+  background: #cfcfcf;
+}
+.phcolor{
+  color: #cfcfcf; 
+}
+.msg_error{
+  color: #ff4141;
+  font-size: 24rpx;
+  position:absolute;
+  left: 30rpx;
+  top: 305rpx;
+}

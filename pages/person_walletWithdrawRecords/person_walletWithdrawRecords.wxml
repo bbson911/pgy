@@ -1,0 +1,26 @@
+<!--pages/person_walletWithdrawRecords/person_walletWithdrawRecords.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<!-- 提现列表 -->
+<scroll-view class="wallet-ul" scroll-y bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+
+  <view class="wallet-li" wx:for="{{withdrawList}}">
+    <view class="wallet-left">
+      <view>{{item.add_time}}</view>
+      <view>提现至 {{common.bankcardFr(item.banknumber)}}</view>
+    </view>
+    <view class="wallet-right">
+      <view>{{item.status}}</view>
+      <view class="red">{{item.account}}</view>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+
+</scroll-view>

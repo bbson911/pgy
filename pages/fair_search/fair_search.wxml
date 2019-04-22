@@ -1,0 +1,40 @@
+<!--pages/fair/fair.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<view id="headerFixed">
+
+  <!--搜索栏-->
+  <view class="search-wrap">
+    <view class="search-location" bindtap='toLocation'>
+        <text style=" float:left; width:60rpx; height:80rpx; overflow:hidden;">{{regionName}}</text>
+        <image src='/assets/images/attention_up.png'></image>
+    </view>
+    <view class="search">
+      <image class="icon-search" src="/assets/images/index_search.png"></image>
+      <input type='text' confirm-type='search' bindinput='searchInput' bindconfirm='search' placeholder="搜索你想要的东西" placeholder-style='color:#cfcfcf;' auto-focus />
+    </view>
+  </view>
+
+</view>
+
+ <scroll-view scroll-y="true" class="scroll-wrap" bindscrolltolower="lower" scroll-top="{{scrollTop}}"> 
+  <!--文章列表-->
+  <view class="article-ul" >
+    <view class="article-li" bindtap='naviToGoodsBuy' wx:for="{{hotList}}" data-productId="{{item.productId}}">
+      <view class='article-pic' style='background-image: url({{item.img_path285}})'>
+      </view>
+      <view class="article-body">
+        <text class="article-title">{{common.titleFr(item.product_name,24)}}</text>
+        <view class="article-price" wx:if="{{item.min_price!=item.max_price}}"><text class="price-unit">¥</text> {{common.moneyFr(item.min_price)}}-{{common.moneyFr(item.max_price)}}</view>
+        <view class="article-price" wx:if="{{item.min_price==item.max_price}}"><text class="price-unit">¥</text> {{common.moneyFr(item.min_price)}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+</scroll-view>

@@ -1,0 +1,12 @@
+<!--pages/real_name/real_name.wxml-->
+
+<view class="order-msg">账户实名认证</view>
+<view class="order-item">
+  <input placeholder="请输入您的真实姓名" placeholder-class="phcolor" bindinput='inputRealname'></input>
+</view>
+  <view class="order-item">
+  <input placeholder="请输入您的18位身份证" placeholder-class="phcolor" bindinput='inputIdno' maxlength='18'></input>
+</view>
+<view class="msg_error">{{errorMsg}}</view>
+<button class="button-confirm {{disabled==true?'disabled':''}}" bindtap="userAuthentication">保存并前往绑卡</button>
+<view class="goUp" bindtap="skipTo">跳过,稍后操作</view>

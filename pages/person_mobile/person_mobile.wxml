@@ -1,0 +1,21 @@
+<!--pages/person_mobile/person_mobile.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!--手机号码信息-->
+<block wx:if="{{status===0}}">
+  <view class="order-item item-space">
+    <text>手机号码</text>
+    <view class="font-airal">{{common.mobileFr(mobile)}}</view>
+  </view>
+  <button class="button-confirm" bindtap="goChangeMobile">更换手机号</button>
+</block>
+
+
+<!--更换手机号码-->
+<block wx:if="{{status===1}}">
+  <view class="change-entry item-space">
+    <navigator url="/pages/person_mobileFirst/person_mobileFirst?type=sms&next=1">原手机还能接收短信<icon class="arrow"></icon></navigator>
+    <navigator url="/pages/person_mobileFirst/person_mobileFirst?type=pwd">原手机无法接收短信<icon class="arrow"></icon></navigator>
+  </view>
+
+</block>

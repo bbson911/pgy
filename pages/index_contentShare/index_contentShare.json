@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "内容分享",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "white",
+  "enablePullDownRefresh": false
+}

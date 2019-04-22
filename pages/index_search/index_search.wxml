@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<view id="headerFixed">
+
+  <!--搜索栏-->
+  <view class="search-wrap">
+    <view class="search-location" bindtap='toLocation'>
+        <text style=" float:left; width:60rpx; height:80rpx; overflow:hidden;">{{regionName}}</text>
+        <image src='/assets/images/attention_up.png'></image>
+    </view>
+    <view class="search">
+      <image class="icon-search" src="/assets/images/index_search.png"></image>
+      <input type='text' confirm-type='search' bindinput='searchInput' bindconfirm='search' placeholder="搜索你感兴趣的内容" placeholder-style='color:#cfcfcf;' auto-focus />
+    </view>
+  </view>
+
+</view>
+
+<scroll-view scroll-y class="article-ul" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+   <view class="article-li" bindtap='toContentDetail' data-id='{{item.articleId}}' data-aprs='{{item.ArticleProductRelateId}}' wx:for="{{articleList}}" >
+    <view class="article-header">
+      <view class="article-avator">
+        <image src='{{item.headimgurl}}'></image>
+      </view>
+        {{item.nickname}}
+      <block wx:if="{{item.publish_time}}">
+        <view class="article-time">
+          {{common.releaseTime(item.publish_time)}}
+        </view>
+      </block>
+      <block wx:else>
+        <view class="article-time"></view>
+      </block>
+    </view>
+    <view class="article-body">
+      <view class="article-body-left">
+        <view class="article-title">{{common.titleFr(item.name,26)}}</view>
+      </view>
+      <view class='article-pic' style="background-image: url({{item.img_path285}})">
+      </view>
+    </view>
+    <view class="article-foot">
+      <text class='red' wx:if="{{item.categoryName!=''}}">{{item.categoryName}}</text>
+      <image class="icon-img" src='/assets/images/eyexx.png'></image>
+      <text>{{item.viewNums}}</text>
+      <image class="icon-img" src='/assets/images/share.png'></image>
+      <text>{{item.shareNums}}</text>
+      <block wx:if="{{item.min_commission!=0}}">
+      <image class="icon-img" src='/assets/images/rmb.png'></image>
+      <text>{{item.min_commission}}/单起</text>
+      </block>
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+</scroll-view>
+

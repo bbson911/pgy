@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "购买订单",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

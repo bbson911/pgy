@@ -1,0 +1,103 @@
+<!--pages/person/person.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!--抢红包  -->
+<!-- <view class="modal_redwars" style="display:{{modalFlag1}}">
+  <view class="click_redwars" >
+      <view class="com_Redname">商品名称商品名称</view>
+      <view class="com_Reduser">您的好友夏天成功下单</view>
+      <view class="com_timeout">2018.05.01 24:00:00后过期</view>
+      <view class="click_get" bindtap='naviToIndex'></view>
+      <view class="red_image">
+        <image src="/assets/images/getred_pocket.png"></image>
+      </view>
+  </view>
+</view> -->
+
+<!--用户信息-->
+<view class="person-user">
+  <image src="{{avator}}" class="avatorImg"></image><!-- <image class="image_level" src="/assets/images/level.png"></image> -->
+  <view class="user-info">
+    <view class="{{!mobile ? 'name-top':''}}">{{nickname}}</view>
+    <view wx:if="{{mobile}}">{{common.mobileFr(mobile)}}</view>
+  </view>
+  <view class="user-perfect" bindtap="perfectAccount" wx:if="{{mobileStatus==1 || idStatus==1 || bankStatus==1}}">完善账户信息</view>
+</view>
+
+<!--用户导航-->
+
+<!--我的钱包-->
+<view class="person-item item-space" bindtap="naviToPage" data-url="person_wallet">
+  <image src="/assets/images/user_pocket.png"></image>
+  <text>我的钱包</text>
+  <view><text class="price-unit">¥ </text>{{balance}}</view>
+  <icon class="arrow"></icon>
+</view>
+
+<!--历史分享-->
+<view class="person-item item-space" bindtap="naviToPage" data-url="attention">
+  <image src="/assets/images/user_share.png"></image>
+  <text>历史分享</text>
+  <icon class="arrow"></icon>
+</view>
+
+<!--我的收益-->
+<view class="person-item" bindtap="naviToPage" data-url="person_interest">
+  <image src="/assets/images/user_interest.png"></image>
+  <text>我的收益</text>
+  <icon class="arrow"></icon>
+</view>
+
+<!--我的收益账单-->
+<view class="person-item" bindtap="naviToPage" data-url="person_incomeList">
+  <image src="/assets/images/user_bill.png"></image>
+  <text>我的收益账单</text>
+  <icon class="arrow"></icon>
+</view>
+
+
+<!--我购买的商品-->
+<view class="person-item item-space" bindtap="naviToPage" data-url="person_buyOrder">
+  <image src="/assets/images/user_cart.png"></image>
+  <text>我购买的商品</text>
+  <icon class="arrow"></icon>
+</view>
+
+<!--退货/售后-->
+<view class="person-item" bindtap="naviToPage" data-url="person_service">
+  <image src="/assets/images/user_service.png"></image>
+  <text>退货/售后</text>
+  <icon class="arrow"></icon>
+</view>
+
+<!--好友邀请-->
+<!-- <view class="person-item" style="position:relative" bindtap="naviToPage" data-url="invite">
+  <image src="/assets/images/user_invite.png"></image>
+  <image id="hotImg" src="/assets/images/invite_hot.png"></image>
+  <text>好友邀请</text>
+  <icon class="arrow"></icon>
+</view> -->
+
+<!--账户设置-->
+<view class="person-item item-space" bindtap="naviToPage"  data-url="person_accountSetting">
+  <image src="/assets/images/user_setting.png"></image>
+  <text>账户设置</text>
+  <icon class="arrow"></icon>
+</view>
+
+<!--联系客服-->
+<button class="person-item item-space"  open-type="contact">
+  <image src="/assets/images/user_contact.png"></image>
+  <text>联系客服</text>
+  <icon class="arrow"></icon>
+</button>
+
+
+
+
+<!--红包-->
+<!-- <image class="person-red red-normal" src="/assets/images/user_red.png" bindtap="naviToPage" data-url="person_redRecord"></image>
+<image class="person-red red-new" src="/assets/images/user_red_new.png" bindtap="clickTogetred" data-url="person_redRecord"></image> -->
+
+<!--底部导航-->
+<footer-nav></footer-nav>

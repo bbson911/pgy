@@ -1,0 +1,82 @@
+<!--pages/index_contentShare/index_contentShare.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<canvas canvas-id='qrCode' style=" width: 120px; height: 120px;top: -9999rpx;position: fixed;" class='test'></canvas>
+<!-- canvas绘制分享图 -->
+<view class="canvas-shade" hidden='{{canvasHidden}}' catchtap='canvasShade'>
+  <view class="canvas-wrap">
+    <canvas canvas-id='myCanvas' class="canvas-box"></canvas>
+    <view class='canvas-save' bindtap='saveImageToPhotosAlbum'>保存图片</view>
+  </view>
+</view>
+
+
+
+<!--内容分享头部-->
+<view class="share-header">
+  <view class="share-header-title">
+    {{common.titleFr(name,35)}}
+  </view>
+  <!-- <view class="share-header-tab">
+    <view class="share-header-span {{contentShare?'on':''}}" data-mode="redPacket" bindtap='switchShare'>红包模式</view>
+    <view class="share-header-span {{contentShare?'':'on'}}" data-mode="commission" bindtap='switchShare'>佣金模式</view>
+  </view> -->
+</view>
+
+<!--内容分享身体-->
+
+<!-- <view class="share-body">
+  <view class="share-body-title">
+    成单抢红包
+    <view class='share-body-title-right'>你与好友分享红包，能抢多少全凭手气</view>
+  </view>
+
+  <view class="share-body-content">
+    <view class='share-body-content-title'>与内容相关的商品</view>
+    <view class="share-body-content-pro">
+      <image class='pro-img' src='/assets/images/article_pic.jpg'></image>
+      <view class="pro-title">亚龙湾接送!三亚蜈支洲岛亚龙湾接送</view>
+      <view class="pro-desc">现票深圳保利百老汇原版话剧音乐剧深圳站演出门票</view>
+      <view class="pro-sale">¥ 520.22-1000.00</view>
+    </view>
+  </view>
+  <view class="share-body-foot">红包总额
+    <text>¥ 520.22-1000.00</text>
+  </view>
+</view> -->
+
+
+
+<view class="share-body">
+  <view class="share-body-title">
+    成单拿收益
+    <view class='share-body-title-right'>整个过程收益信息不会透露给你的朋友</view>
+  </view>
+
+  <view class="share-body-content">
+    <view class='share-body-content-title'>与内容相关的商品</view>
+    <view class="share-body-content-pro">
+      <view class='pro-img' style='background-image: url({{img_path}})'></view>
+      <!-- <image class='pro-img' src='{{img_path}}'></image> -->
+      <view class="pro-title">{{common.titleFr(product_name,35)}}</view>
+      <!-- <view class="pro-desc">{{common.titleFr(synopsis,26)}}</view> -->
+
+      <view wx:if="max_price==min_price" class="pro-sale">¥ {{common.moneyFr(max_price)}}</view>
+      <view wx:else class="pro-sale">¥ {{common.moneyFr(min_price)}}-{{common.moneyFr(max_price)}}</view>
+
+    </view>
+  </view>
+  <view class="share-body-foot" bindtap='makeQrcode'>单笔收益
+    <text wx:if="max_commission==min_commission">¥ {{common.moneyFr(max_commission)}}</text>
+    <text wx:else>¥ {{common.moneyFr(min_commission)}}-{{common.moneyFr(max_commission)}}</text>
+  </view>
+</view>
+
+
+<!--内容分享底部-->
+<view class="share-footer">
+  <view class="share-footer-title">我要分享</view>
+  <button class='share-icon friends' style='margin: 0;' open-type="share"></button>
+  <!-- <image class='share-icon' bindtap='generateImg' src='/assets/images/wxfriend.png'></image>    -->
+  <view class='share-txt'>分享后可在关注中查看数据</view>
+</view>

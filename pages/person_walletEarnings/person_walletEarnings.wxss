@@ -1,0 +1,88 @@
+/* pages/person_walletEarnings/person_walletEarnings.wxss */
+
+page {
+  background: #f2f2f2;
+}
+button::after{
+  border: 0;
+  outline: 0;
+}
+
+/* 收益金额 */
+
+.wallet-wrap {
+  width: 100%;
+  height: 210rpx;
+  background: linear-gradient(#ff7841, #ff5941);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.wallet-title {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  margin: 30rpx 0 0 0;
+}
+
+.wallet-money {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 60rpx;
+}
+
+.wallet-money text {
+  font-size: 30rpx;
+}
+
+/* 收益列表 */
+
+.wallet-li {
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  font-size: 28rpx;
+  color: #373737;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+/* 联系客服 */
+
+.concat_chat {
+  width: 175rpx;
+  height: 33rpx;
+  line-height: 33rpx;
+  position: fixed;
+  bottom: 50rpx;
+  left: 290rpx;
+  border: 0;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.concat_chat >image {
+  margin-right: 30rpx;
+  width: 31rpx;
+  height: 31rpx;
+  float: left;
+}
+
+.concat_chat >view {
+  float: right;
+  font-size: 28rpx;
+  color: #373737;
+}

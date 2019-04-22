@@ -1,0 +1,23 @@
+<!--pages/person_mobileFirst/person_mobileFirst.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!--手机号码信息-->
+<block wx:if="{{type==='sms'}}">
+  <view class="order-msg">短信验证码已发送至{{common.mobileFr(mobile)}}，请查收</view>
+  <view class="order-item">
+    <view><input placeholder="请输入您的验证码" maxlength='4' bindinput="addCode"></input></view>
+    <text class="color004" disabled='{{disabled}}' bindtap="sendMoilemsg">{{text}}</text>
+  </view>
+   <view class="msg_error">{{errMsg}}</view>
+  <button class="button-confirm {{changeBg==true?'disabled':''}}" bindtap="goChangeMobile">下一步</button>
+</block>
+
+
+<!--更换手机号码-->
+<block wx:if="{{type==='pwd'}}">
+  <view class="order-msg">输入账户（{{mobile}}）密码，完成验证</view>
+  <view class="order-item">
+    <input type="password" placeholder="请输入您的账户密码" bindinput='pwd'></input>
+  </view>
+  <button class="button-confirm" bindtap="checkPassword">下一步</button>
+</block>

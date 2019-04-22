@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "聚焦蒲公英",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "white",
+   "enablePullDownRefresh": false
+}

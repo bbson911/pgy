@@ -1,0 +1,49 @@
+<!--pages/red_record/red_record.wxml-->
+<!--打开红包记录  -->
+<view class="red_person">
+    <image src="/assets/images/portrait.png"></image>
+    <view class="person_names">夏天夏天</view>
+    <view class="red_person_detail">
+      <view class="get_lefts">收到红包<text class="price_symbol"> ￥</text><text class="price_money"> 33.60</text></view>
+      <view class="get_rights">手气最高 5 次</view>
+    </view>
+</view>
+<!--红包记录列表  -->
+<view class="red_recordList">
+  <view class="g_recordList">
+      <view class="g_recordleft">
+        <view class="record_name">商品标题商品标题商品标题</view>
+        <view class="record_times">2018-04-08 10:00</view>
+      </view>
+      <view class="g_recordright">
+        <text>￥</text>33.60
+      </view>
+  </view>
+  <view class="g_recordList">
+      <view class="g_recordleft">
+        <view class="record_name">商品标题商品标题商品标题</view>
+        <view class="record_times">2018-04-08 10:00</view>
+      </view>
+      <view class="g_recordright">
+        <text>￥</text>33.60
+      </view>
+  </view>
+  <view class="g_recordList">
+      <view class="g_recordleft">
+        <view class="record_name">商品标题商品标题商品标题</view>
+        <view class="record_times">2018-04-08 10:00</view>
+      </view>
+      <view class="g_recordright">
+        <text>￥</text>33.60
+      </view>
+  </view>
+  <view class="g_recordList">
+      <view class="g_recordleft">
+        <view class="record_name">商品标题商品标题商品标题</view>
+        <view class="record_times">2018-04-08 10:00</view>
+      </view>
+      <view class="g_recordright">
+        <text>￥</text>33.60
+      </view>
+  </view>
+</view>

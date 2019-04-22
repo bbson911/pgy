@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "实名信息",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

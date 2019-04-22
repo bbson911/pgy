@@ -1,0 +1,80 @@
+<!--pages/fair_order/fair_order.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!--地址-->
+<block wx:if="{{addressId}}">
+<view class="order-address" bindtap="naviToAddressList">
+  <view class="address-user">
+    <text>收货人：{{realname}}</text>
+    <text>{{mobile}}</text>
+  </view>
+  <text class="address-add">收货地址：{{region}}{{address}}</text>
+  <view class="arrow"></view>
+</view>
+</block>
+<block wx:else>
+<view class="order-address" bindtap="naviToAddressAdd">
+  <view style="width:100%;text-align:center; height:34rpx;line-height:34rpx;">
+    请先添加地址
+  </view>
+</view>
+</block>
+<!--商品信息-->
+<view class="order-select">
+  <image src="{{img_path}}"></image>
+  <view class="select-option">
+    <text>{{common.titleFr(name,50)}}</text>
+    <view class="option-item"><text>{{extra}}</text></view>
+    <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(selling_price)}}</view>
+  </view>
+  <view class="select-num">X{{num}}</view>
+</view>
+
+<!--订单信息-->
+<view class="order-item">
+  <text>商品合计</text>
+  <view><text class="price-unit">¥</text> {{common.moneyFr(selling_price*num)}}</view>
+</view>
+<!-- <view class="order-item">
+  <text>运费</text>
+  <view><text class="price-unit">¥</text> 8.00</view>
+</view> -->
+<view class="order-item">
+  <text>支付方式</text>
+  <view>微信支付</view>
+</view>
+
+<picker bindchange="bindPickerChange" value="{{index}}" range="{{invoiceArray}}">
+  <view class="order-item invoices">
+    <text>发票</text>
+    <view>{{invoiceValue}}<view class="arrow"></view></view> 
+  </view>
+</picker>
+<view class="order-item" wx:if="{{invoiceValue=='公司'}}">
+  <input type="text" bindinput='invoicetitle' placeholder="请输入公司名称"></input>
+</view>
+<view class="order-item" wx:if="{{invoiceValue=='公司'}}">
+  <input type="text" bindinput='invoiceno' placeholder="请输入纳税人识别号"></input>
+</view>
+<view class="order-item messages">
+  <text>留言</text>
+  <input type="text" bindinput='remark' placeholder="给卖家留言"></input>
+</view>
+
+<!--协议-->
+<!-- <view class="order-agree">
+  <checkbox-group bindchange="checkboxChange" class="agree-default">
+    <label>
+      <checkbox value="1"></checkbox>
+      <view class="default-text">我同意潘多拉平台用户协议</view>
+    </label>   
+  </checkbox-group>
+</view> -->
+
+
+
+<!--底部提交订单-->
+<view class="bottom-fixed" style="height: {{btuHeight}}">
+  <view class="bottom-total">应付：<view class="total-price"><text class="price-unit">¥</text> {{selling_price*num}}</view></view>
+  <button bindtap="naviToResult">提交订单</button>
+</view>

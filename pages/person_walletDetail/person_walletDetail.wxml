@@ -1,0 +1,53 @@
+<!--pages/person_walletDetail/person_walletDetail.wxml-->
+<movable-view class="movable_viewstyle" style="display:{{modalFlag}}" bindtap='selectClose'> 
+<picker-view mode='selector' range='{{chooseArr}}' indicator-style="height: 50rpx;" style="width: 100%; height:464rpx; text-align:center;z-index:99999;position:fixed;background:white;bottom:0px;" value="{{value}}" bindchange="bindChange">
+    <view class="picker_titles">
+      <view class="navigator_left" bindtap='selectClose'>取消</view>
+      <view class="navigator_right" bindtap='selectTap'>确定</view>
+      <label class="navigator_center">请选择</label>
+  </view>
+    <picker-view-column>
+      <view wx:for="{{type}}"  data-id="{{item.id}}" class="choise_value" >{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+
+</movable-view>
+
+
+<!-- 明细筛选 -->
+<view class="wallet-filter">
+  <text bindtap='showSelect'>{{name}}</text>
+  <image class='wallet-filter-right' src='/assets/images/wallet_filter.png' bindtap='showSelect'></image>
+</view>
+
+<!-- 明细列表 -->
+<scroll-view scroll-y class="wallet-ul" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+
+  <view class="wallet-li" wx:for="{{walletArray}}" data-title="{{item.title}}" data-id="{{item.id}}" bindtap='naviToIndexWallet'>
+    <view class="wallet-left">
+      <view>{{item.title}}</view>
+      <view>{{item.add_time}}</view>
+    </view>
+    <view class="wallet-right">
+
+      <block wx:if="{{item.is_plus==2}}">
+        <view class="green">-{{item.account}}</view>
+      </block>
+      <block wx:else>
+        <view class="red">{{item.account}}</view>
+      </block>
+      
+      <view>余额：{{item.current_balance}}</view>
+    </view>
+  </view>
+
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+
+</scroll-view>

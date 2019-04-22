@@ -1,0 +1,124 @@
+/* pages/person_serviceResult/person_serviceResult.wxss */
+
+page{
+  background: #f2f2f2;
+  color: #373737;
+}
+button::after{
+  border: 0;
+}
+.item-space{
+  margin-top: 10rpx;
+}
+.font-airal{
+  font-family: Arial;
+}
+.colorf41{
+  color: #ff4141;
+}
+.phcolor{
+  color: #eaeaea;
+}
+
+/*订单状态*/
+.order-status{
+  background: #ff7541;
+  height: 236rpx;
+  padding: 0 30rpx;
+}
+.order-status .status-msg{
+  width: 100%;
+  float: left;
+  font-size: 24rpx;
+  color: #ffffff;
+  margin: 72rpx 0 30rpx 0;
+}
+.order-status .status-msg > view:first-child{
+  font-size: 34rpx;
+  margin-bottom: 6rpx;
+}
+
+
+/*商品信息*/
+.order-select{
+  position: relative;
+  width: 100%;
+  height: 217rpx;
+  padding: 25rpx 30rpx 0;
+  background: #ffffff;
+  font-size: 24rpx;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.order-select > image{
+  width: 167rpx;
+  height: 167rpx;
+  float: left;
+  margin-right: 25rpx;
+}
+.order-select .select-option{
+  width: 405rpx;
+  float: left;
+  line-height: 30rpx;
+}
+.order-select .select-option .option-item{
+  font-size: 18rpx;
+  color: #7e7e7e;
+  padding-top: 4rpx;
+}
+.order-select .select-option .option-item > text{
+  margin-right: 30rpx;
+}
+.order-select .select-num{
+  margin-top: 74rpx;
+  float: right;
+}
+.order-select .select-price{
+  position: absolute;
+  bottom: 25rpx;
+  right: 30rpx;
+  font-family: Arial;
+  font-size: 28rpx;
+  color: #ff4141;
+}
+
+/*订单信息*/
+.order-item{
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+  width: 100%;
+  line-height: 40rpx;
+  padding: 15rpx 30rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.order-item > text:first-child{
+  float: left;
+  margin-right: 40rpx;
+}
+.order-item > view:last-child{
+  float: right;
+  width: 510rpx;
+  text-align: right;
+}
+.order-item input{
+  line-height: 40rpx;
+  height: 40rpx;
+  text-align: right;
+}
+
+
+/* 提交 */
+.option-buy{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 34rpx;
+  color: #ffffff;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  border-radius: 50rpx;
+  margin: 150rpx auto;
+}
+.option-buy.disabled{
+  background: #cfcfcf;
+}
+

@@ -1,0 +1,50 @@
+<!--pages/person_walletWithdrawDeposit/person_walletWithdrawDeposit.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<!--银行卡-->
+<view class="card-wrap" style="background-image: url({{bankcardicon}})" bindtap='toBankCard'>
+  <view class="card-name">
+    <view>{{bankcardname}}</view>
+    <view>储蓄卡</view>
+  </view>
+  <view class="card-number">
+    {{common.bankcard2Fr(bankcard)}}
+    <image class="card-arrow" src='/assets/images/card_arrow.png'></image>
+  </view>
+</view>
+
+<!--提现-->
+<view class="card-options">
+  可提现金额 <span class="price-unit">¥</span> {{common.moneyFr(balance,2)}}
+  <view class="card-record" bindtap='withdrawRecord'>
+    提现记录<image class="card-right-arrow" src='/assets/images/rightArrow.png'></image>
+  </view>
+</view>
+<view class="card-options">
+  <input class="card-input" type="digit" data-key="inputWithdraw" value="{{inputWithdraw}}"  placeholder="请输入提现金额" bindinput='inputWithdraw'></input>
+  <view class="card-all"  bindtap='allWithdraw'>全部提现</view>
+</view>
+<view class="card-tips">实际到账金额 ¥ {{common.moneyFr(getWithdraw,2)}}，手续费 ¥ 3.00</view>
+
+<button class="card-btn {{changeBg==true?'disabled':''}}" bindtap='showMask'>提交</button>
+<view class="card-times">预计1个工作日内到账</view>
+
+<!--短信-->
+<view class='card-mask' wx:if="{{showModal}}">
+  <view class='card-msg'>
+    <view class='mask-close' bindtap='closeMask'><image src='/assets/images/close.png'></image></view>
+    <view class='card-msg-title'>
+      短信已发送
+    </view>
+    <view class='card-mobile'>
+      {{common.mobileFr(mobile)}}
+    </view>
+    <view class='card-code' bindtap='focusCodeInput'>
+      <view class="card-num {{codeIndex==index?'on':''}}" wx:for="{{codeData}}" wx:key="index">{{item}}</view>
+      <input id="inputText" type="number" maxlength='4' bindinput="inputText" value="{{inputText}}" focus="{{input_focus}}"></input>
+    </view>
+    <view class='card-bottom-txt'>
+      <view class='card-code-error'>{{errMsg}}</view>
+      <view class='card-code-times' bindtap="sendMoilemsg">{{text}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,88 @@
+<!--pages/invite/invite.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+
+<view class="modal_content" style="display:{{inviteFlag}}" >
+  <view class="modalBg" bindtap='modalCanel'></view>
+  <view class="modal_text" style='height: {{btuHeight}}'>
+    <button class='share-icon friends' open-type="share"></button>
+    <text>微信好友</text>
+  </view>
+</view>
+<view class="modal_content1" style="display:{{modalShow}}">
+  <view class="modalBg1" bindtap="modalClose"></view>
+   <view class="invite-show">
+    <image class="closes" src="/assets/images/colses.jpg" bindtap="modalClose"></image>
+    <view class="inviteTitle">活动介绍</view>
+    <view class="inviteFather">
+      <view class="inviteOne">如何成为你的好友</view>
+      <view class="inviteTwo"><text>1</text>通过“邀请好友加入”，分享您的邀请函给您的好友。</view>
+      <view class="inviteTwo"><text>2</text>您的好友通过邀请函，授权并点击“我要加入试试”，即可成为您的好友啦。</view>
+      <view class="inviteOne" style="margin-top:40rpx;">海量好友的优势</view>
+      <view class="inviteTwo"><text>3</text>通过您好友创作的文章，每当购买成单，您即可获得好友创作收益10%的分成。</view>
+      <view class="inviteTwo"><text>4</text>通过您好友分享的文章，每当购买成单，您即可获得好友分享收益10%的分成。</view>
+      <view class="inviteThree"><text>例如：</text>您的好友小王，分享了一篇文章，然后小王的邻居，通过小王分享文章购买了商品，您就可以获得小王该次分享收益的10%的收益(在整个过程中不会影响小王原有获得的收益。)</view>
+    </view>
+  </view>
+</view>
+
+
+<scroll-view scroll-y class="invite-wrap" bindscrolltolower="lower" scroll-top="{{scrollTop}}" style='padding-bottom:{{btnBottom}}'>
+
+  <!-- 按钮+收益 -->
+  <view class="invite-top">
+    <view class="inviteDetail" bindtap='inviteActive'>
+      <image src="/assets/images/inviteDetail.png"></image>
+    </view>   
+    <button bindtap="modalShow"></button>
+    <view class="invite-two">
+      <view class="two-left">
+        <view>我的好友</view>
+        <view>{{count}}</view>
+      </view>
+      <view class="two-right">
+        <view>累计收益</view>
+        <view>{{common.moneyFr(sumTotal,2)}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <!-- 记录 -->
+  <view class="invite_wrap2">
+    <view class="invite-record">
+      <view class="rec-dl">
+        <view class="rec-dt">
+          <view>好友</view>
+          <view>我从中获得的收益</view>
+        </view>
+
+         <view class="rec-dd" wx:for="{{inviteDatas}}">
+          <view>
+            <image src="{{item.headimgurl}}" style="border-radius:50%"></image>
+            <view class="dd-user">
+              <view>{{item.nickname}}</view>
+              <view>{{common.formatTime(item.add_time)}}</view>
+            </view>
+          </view>
+          <view>{{common.moneyFr(item.giveMoney,2)}}</view>
+        </view> 
+      </view>
+
+      <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+        <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+        <block wx:if="{{page==1 && nodataStatus}}">
+        <view class="noData">
+          <image src="/assets/images/noabout.png"></image>
+          <text>暂无数据</text>
+        </view>
+        </block>
+      
+    </view> 
+  </view>
+
+  
+
+</scroll-view>
+
+<!--底部导航-->
+<footer-nav></footer-nav>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "提现结果",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

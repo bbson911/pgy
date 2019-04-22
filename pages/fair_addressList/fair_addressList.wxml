@@ -1,0 +1,27 @@
+<!--pages/fair_addressList/fair_addressList.wxml-->
+<view class="address-ul">
+  
+  <!-- 一条数据  -->
+  <view class="address-li" wx:for="{{addressList}}" wx:key="index">
+    <view class="address-top"  bindtap='goFairOrder' data-id="{{item.id}}">
+      <view class="address-user">
+        <text class="user-name">收货人：{{item.realname}}</text>
+        <text class="user-tel">{{item.mobile}}</text>
+      </view>
+      <view class="address-detail">收货地址：{{item.region}}{{item.address}}</view>
+    </view>
+    <view class="address-bottom">
+      <radio-group bindchange="checkboxChange" id="checkbox1" class="address-default"  data-id="{{item.id}}">
+        <label>
+          <radio value="" checked="{{item.default}}"></radio>
+          <view class="default-text">设置为默认地址</view>
+        </label>   
+      </radio-group>
+      <button class="address-del" bindtap="deleteAddress" data-id="{{item.id}}">删除</button>
+      <button class="address-edit" bindtap="naviToAddressEdit" data-id="{{item.id}}">编辑</button>
+    </view>
+  </view>
+
+</view>
+
+<button class="address-add" bindtap="naviToAddressAdd">添加地址</button>

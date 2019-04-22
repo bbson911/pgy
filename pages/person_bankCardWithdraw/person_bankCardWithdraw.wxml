@@ -1,0 +1,26 @@
+<!--pages/person_bankCardWithdraw/person_bankCardWithdraw.wxml-->
+<!-- <text>pages/person_bankCardWithdraw/person_bankCardWithdraw.wxml</text> -->
+<view class="bankCard">
+  <view class="changeCard">
+    <view class="bankName">
+      <view>中国工商银行</view>
+      <view>储蓄卡</view>
+    </view>
+    <view class="bankNumber">6654  ****  ****  7885</view>
+    <view class="bankIcon"><image src="/assets/images/banIcon.png"></image></view>
+  </view>
+</view>
+<view class="withdrawRecord">
+  <view class="withdrawMoney">可提现金额 <text>￥</text>834.00</view>
+  <view class="goWithdraw">提现记录></view>
+</view>
+<view class="withdrawRecord">
+  <view class="importMoney"><input placeholder-class="place-holder" placeholder='请输入提现金额'></input></view>
+  <view class="allWithdraw">全部提现</view>
+</view>
+<view class="description">实际到账金额 ¥ 834.00，手续费 ¥ 3.00</view>
+<view class="submitParent">
+  <view class="withSubmit">提交</view>
+</view>
+
+<view class="onedays">预计1个工作日内到账</view>

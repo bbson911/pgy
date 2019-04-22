@@ -1,0 +1,305 @@
+/* pages/invite/invite.wxss */
+
+page{
+  background: #c51d1f;
+  height: 100%;
+}
+button::after{
+  outline: 0;
+  border: 0;
+}
+
+.invite-wrap{
+  width: 750rpx;
+  height: 100%;
+  margin: 0 auto;
+}
+.invite-top{
+  width: 100%;
+  height: 1060rpx;
+  position: relative;
+  background: url(https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/f5d15ecad47ebfa2a1381b943f519290) no-repeat top center; 
+  background-size: 750rpx 1060rpx;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+
+}
+.invite-record{
+  background: #ffffff;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.invite-record .rec-dl > view{
+  display: flex;
+  justify-content: space-between;
+}
+.invite-record .rec-dl > view > view{
+  width: 335rpx;
+}
+.invite-record .rec-dt{
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #cd4900;
+  line-height: 90rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  background: #ffecd0;
+}
+
+.invite-record .rec-dd{
+  padding: 20rpx 0;
+}
+.invite-record .rec-dd image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx; 
+}
+.invite-record .rec-dd > view:nth-child(1){
+  color: #373737;
+  padding-left: 67rpx;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.invite-record .rec-dd > view:nth-child(1) > view{
+  width: 198rpx;
+}
+.invite-record .rec-dd .dd-user > view:nth-child(1){
+  font-size: 20rpx;
+}
+.invite-record .rec-dd .dd-user > view:nth-child(2){
+  font-size: 16rpx;
+}
+.invite-record .rec-dd > view:nth-child(2){
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #d9211c;
+  line-height: 50rpx;
+  text-align: center;
+}
+.invite_wrap2{
+  background: url(https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/3546c9fa8228d980e302b38a1e6239a6) no-repeat top center; 
+  background-size: 750rpx 1160rpx;
+  padding-left:30rpx;
+  padding-right: 30rpx;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.invite-two{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 892rpx 0 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+}
+.invite-two > view > view:nth-of-type(1){
+  font-size: 24rpx;
+  color: #cd4900;
+  line-height: 76rpx;
+}
+.invite-two > view > view:nth-of-type(2){
+  text-align: center;
+  font-size: 30rpx;
+  color: #d9211c;
+  line-height: 88rpx;
+}
+.two-left,.two-right{
+  width: 335rpx;
+}
+.two-left > view:nth-of-type(1){
+  padding-left: 125rpx;
+}
+.two-right > view:nth-of-type(1){
+  padding-left: 118rpx;
+}
+
+.modal_content,.modal_content1{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+.modalBg,.modalBg1{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0,0, 0.3);
+  position: fixed;
+  top: 0;
+}
+.modal_text{
+  background: #ffffff;
+  height: 200rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 11;
+  text-align: center;
+}
+.modal_text image{
+  width: 100rpx;
+  height: 90rpx;
+  display: block;
+  margin:37rpx auto auto auto;
+}
+.modal_text text{
+  text-align: center;
+  font-size: 24rpx;
+  color: #373737;
+  
+}
+.invite-top button{
+  width: 396rpx;
+  height: 100rpx;
+  background: none;
+  position: absolute;
+  bottom: 218rpx;
+  left: 178rpx;
+}
+
+.share-icon {
+  display: block;
+  width: 100rpx;
+  background: none;
+  height: 90rpx;
+  margin-top: 30rpx;
+}
+
+.share-icon::after {
+  border: none;
+}
+
+.share-icon.friends {
+  background: url(https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/b05cfca2f9dad98b84ae9bc360734f19) no-repeat; 
+  background-size: 100% 100%;
+}
+
+/* loading */
+.loading{
+  width: 100%;
+  padding: 50rpx 0;
+  
+}
+.loading image{
+  display: block;
+  width: 42rpx;
+  height: 42rpx;
+  margin: 0 auto;
+  animation: circle 0.5s infinite linear;
+}
+@-webkit-keyframes circle{
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+ }
+
+ /* 没有更多数据 */
+ .noMoreData{
+   width: 100%;
+   text-align: center;
+   font-size: 24rpx;
+   color: #999;
+   line-height: 80rpx;
+   height: 80rpx;
+ }
+
+/* 暂无数据 */
+.noData{
+  padding: 130rpx 0;
+  text-align: center;
+}
+.noData image{
+  display: block;
+  margin: 0 auto;
+  width: 270rpx;
+  height: 230rpx;
+}
+.noData text{
+  font-size: 28rpx;
+  color: #373737;
+}
+/*邀请活动页  */
+.inviteDetail{
+  width: 70rpx;
+  height: 211rpx;
+  position: fixed;
+  right: 0;
+  top: 400rpx;
+}
+.inviteDetail image{
+  width: 70rpx;
+  height: 211rpx;
+}
+.invite-show{
+  width: 589rpx;
+  min-height: 890rpx;
+  border: 3rpx solid #ffd633;
+  background: #ffffff;
+  border-radius: 15rpx;
+  position: absolute;
+  top: 195rpx;
+  left: 78rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+}
+.invite-show .closes{
+  width: 30rpx;
+  height: 30rpx;
+  float: right;
+  margin-top: 21rpx;
+  margin-right:19rpx;
+}
+.inviteTitle{
+  font-size: 34rpx;
+  color: #373737;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 68rpx;
+  margin-top:30rpx;
+}
+.inviteOne{
+  font-size: 24rpx;
+  color: #373737;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 20rpx;
+}
+.inviteTwo{
+  font-size: 24rpx;
+  color: #7e7e7e;
+  line-height: 44rpx;
+  width: 500rpx;
+  padding-left: 40rpx;
+  position: relative;
+
+}
+.inviteTwo text{
+  width: 28rpx;
+  height: 28rpx;
+  text-align: center;
+  line-height: 28rpx;
+  font-size: 18rpx;
+  color: #ffffff;
+  background: #c88e6f;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  left: 0rpx;
+  top: 10rpx;
+}
+.inviteThree{
+  font-size: 24rpx;
+  color: #373737;
+  margin-top: 50rpx;
+  line-height: 42rpx;
+}
+.inviteThree text{
+  font-size: 24rpx;
+  font-weight: bold;
+  color: #373737;
+}
+.inviteFather{
+  width: 505rpx;
+}

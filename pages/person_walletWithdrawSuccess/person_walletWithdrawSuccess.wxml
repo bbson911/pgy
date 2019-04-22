@@ -1,0 +1,29 @@
+<!--pages/person_walletWithdrawSuccess/person_walletWithdrawSuccess.wxml-->
+
+<!-- 提现成功 -->
+<view class="withdraw-success">
+  <image class="success" src="/assets/images/success.png"></image>
+  <view class="success-txt">提现申请成功</view>
+</view>
+
+<!-- 提现列表 -->
+<view style=" margin: 10rpx 0 0 0;">
+  <view class="withdraw-li">
+    <view class="left">到账金额</view>
+    <view class='right'>¥{{account}}</view>
+  </view>
+  <view class="withdraw-li">
+    <view class="left">手续费</view>
+    <view class='right'>¥3.00</view>
+  </view>
+  <view class="withdraw-li">
+    <view class="left">预计到账时间</view>
+    <view class='right'>{{getaccoutTime}}</view>
+  </view>
+  <view class="withdraw-li">
+    <view class="left">银行卡</view>
+    <view class='right'>{{bankcardname}} {{bankcard}}</view>
+  </view>
+</view>
+
+<view class="withdraw-back" bindtap='goIndex'>返回首页</view>

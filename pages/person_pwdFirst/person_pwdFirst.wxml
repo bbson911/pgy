@@ -1,0 +1,9 @@
+<!--pages/person_pwdFirst/person_pwdFirst.wxml-->
+
+<!--密码信息-->
+<view class="order-msg">输入账户（{{mobile}}）密码，完成验证</view>
+<view class="order-item">
+  <input type="password" placeholder="请输入您的账户密码" bindinput='inputPwd' auto-focus/>
+</view>
+<button class="button-confirm" bindtap="goChangeMobile" data-type='2'>下一步</button>
+

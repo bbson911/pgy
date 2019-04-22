@@ -1,0 +1,116 @@
+<!--pages/person_logistics/person_logistics.wxml-->
+
+<!--物流-总览-->
+<view class="logis-total">
+  <image src="/assets/images/article_pic.jpg"></image>
+  <view class="status-msg">
+    <view>物流状态：<text class="colorf78">已签收</text></view>
+    <view>物流公司：顺丰快递</view>
+    <view>物流单号：0123456789</view>
+    <view>官方电话：95595</view>
+  </view>
+</view>
+
+
+<!--物流-详情-->
+<view class="logis-detail">
+
+  <!--已签收-->
+  <view class="detail-item">
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>已签收</view>
+        <view>包裹已签收，感谢您使用菜鸟联盟服务，期待下次继续为您服务</view>
+      </view>
+    </view>
+    <view class="item-line"></view>
+    <image src="/assets/images/log_sign.png"></image>
+  </view>
+
+  <!--派送中-->
+  <view class="detail-item">
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>派送中</view>
+        <view>【上海市】宝山大场站派件员：葛亚宾 <text class="colorf78">17621531155</text>正在为您派件</view>
+      </view>
+    </view>
+    <view class="item-line"></view>
+    <image src="/assets/images/log_dispatch.png"></image>
+  </view>
+
+  <!--运输中-->
+  <view class="detail-item">
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>运输中</view>
+        <view>【上海市】您的包裹已到达【宝山大场站】，准备分配派送员</view>
+      </view>
+    </view>
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>【上海】您的包裹已从【晟邦上海分拨中心】发出</view>
+      </view>
+    </view>
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>【上海】您的包裹已到达【晟邦上海分拨中心】</view>
+      </view>
+    </view>
+    <view class="item-line"></view>
+    <image src="/assets/images/log_transit.png"></image>
+  </view>
+
+  <!--已揽件-->
+  <view class="detail-item">
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>已揽件</view>
+        <view>您的包裹已由物流公司揽收</view>
+      </view>
+    </view>
+    <view class="item-line"></view>
+    <image src="/assets/images/log_package.png"></image>
+  </view>
+ 
+  <!--已揽件-->
+  <view class="detail-item">
+    <view class="item-con clearfix">
+      <view class="item-time">
+        <view>05-18</view>
+        <view>10:00</view>
+      </view>
+      <view class="item-msg">
+        <view>已发货</view>
+        <view>包裹正在等待揽收</view>
+      </view>
+    </view>
+    <image src="/assets/images/log_ship.png"></image>
+  </view>
+
+</view>
+

@@ -1,0 +1,373 @@
+<!--pages/person_orderDetail/person_orderDetail.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<!--等待付款-->
+<block wx:if="{{detailData.order_status==1}}">
+  <!--订单状态-->
+  <view class="order-status">
+    <view class="status-msg">
+      <view>{{detailData.status_name}}</view>
+      <view>剩余{{common.timeDiff(detailData.end_time)}}自动关闭</view>
+    </view>
+    <image class="awaitpay" src="/assets/images/order_awaitpay.png"></image>
+  </view>
+
+  <!--地址-->
+  <view class="order-address">
+    <image class="location" src="/assets/images/location.png"></image>
+    <view class="address-user">
+      <text>收货人：{{detailData.contents.userAddress.realname}}</text>
+      <text>{{detailData.contents.userAddress.mobile}}</text>
+    </view>
+    <text class="address-add">收货地址：{{detailData.contents.userAddress.region}}{{detailData.contents.userAddress.address}}</text>
+  </view>
+
+  <!--商品信息-->
+  <view class="order-select item-space">
+    <image src="{{detailData.contents.goods.img_path}}"></image>
+    <view class="select-option">
+      <text>{{common.titleFr(detailData.contents.goods.product_name,32)}}</text>
+      <view class="option-item">{{detailData.contents.specifications}}</view>
+      <view class="option-item"><text>{{detailData.explain}}</text></view>
+    </view>
+    <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(detailData.contents.goods.selling_price)}}</view>
+    <view class="select-num">X{{detailData.number}}</view>
+  </view>
+
+  <!--订单信息-->
+  <view class="order-item">
+    <text>订单号</text>
+    <view>{{detailData.order_number}}</view>
+  </view>
+  <view class="order-item">
+    <text>购买时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>商品价格</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+  <!-- <view class="order-item">
+    <text>快递费</text>
+    <view><text class="price-unit">¥</text> 8.00</view>
+  </view> -->
+  <view class="order-item item-space">
+    <text>待付款</text>
+    <view class="colorf41"><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+
+  <!--底部菜单-->
+  <view class="bottom-fixed" style="height: {{btuHeight}}">
+    <view class="bottom-contact">
+      <image class="icon-img" src='/assets/images/contact.png'></image>
+      <button open-type="contact">客服咨询</button>
+    </view>
+    <button class="bottom-confirm" bindtap="goPay" data-product_id="{{detailData.contents.goods.product_id}}" data-goods_type="{{detailData.contents.goods.goods_type}}" data-num="{{detailData.number}}" data-product_order_id="{{detailData.product_order_id}}"    data-id="{{detailData.id}}">去付款</button>
+    <button class="bottom-apply" bindtap="cancelOrder" data-id="{{detailData.id}}">取消</button>
+  </view>
+</block> 
+
+<!--待发货-->
+<block wx:if="{{detailData.order_status==2}}">
+  <!--订单状态-->
+  <view class="order-status">
+    <view class="status-msg">
+      <view>{{detailData.status_name}}</view>
+    </view>
+    <image class="awaitget" src="/assets/images/order_awaitget.png"></image>
+  </view>
+
+  <!--地址-->
+  <view class="order-address">
+    <image class="location" src="/assets/images/location.png"></image>
+    <view class="address-user">
+      <text>收货人：{{detailData.contents.userAddress.realname}}</text>
+      <text>{{detailData.contents.userAddress.mobile}}</text>
+    </view>
+    <text class="address-add">收货地址：{{detailData.contents.userAddress.region}}{{detailData.contents.userAddress.address}}</text>
+  </view>
+
+  <!--商品信息-->
+  <view class="order-select item-space">
+    <image src="{{detailData.contents.goods.img_path}}"></image>
+    <view class="select-option">
+      <text>{{common.titleFr(detailData.contents.goods.product_name,32)}}</text>
+      <view class="option-item">{{detailData.contents.specifications}}</view>
+      <view class="option-item"><text>{{detailData.explain}}</text></view>
+    </view>
+    <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(detailData.contents.goods.selling_price)}}</view>
+    <view class="select-num">X{{detailData.number}}</view>
+  </view>
+
+  <!--订单信息-->
+  <view class="order-item">
+    <text>订单号</text>
+    <view>{{detailData.order_number}}</view>
+  </view>
+  <view class="order-item">
+    <text>购买时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>商品价格</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+  <!-- <view class="order-item">
+    <text>快递费</text>
+    <view><text class="price-unit">¥</text> 8.00</view>
+  </view> -->
+  <view class="order-item item-space">
+    <text>支付方式</text>
+    <view>微信支付</view>
+  </view>
+  <view class="order-item">
+    <text>支付时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>支付金额</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+
+  <!--底部菜单-->
+  <view class="bottom-fixed" style="height: {{btuHeight}}">
+    <view class="bottom-contact">
+      <image class="icon-img" src='/assets/images/contact.png'></image>
+      <button open-type="contact">客服咨询</button>
+    </view>
+    <button class="bottom-apply" bindtap="naviToserviceRights" data-id="{{detailData.id}}">申请售后</button>
+  </view>
+</block> 
+
+<!--已发货-->
+<block wx:if="{{detailData.order_status==3}}">
+  <!--订单状态-->
+  <view class="order-status">
+    <view class="status-msg">
+      <view>{{detailData.status_name}}</view>
+      <view>请注意查收</view>
+    </view>
+    <image class="delivery" src="/assets/images/order_delivery.png"></image>
+  </view>
+
+  <!--运输状态-->
+  <!-- <view class="order-transport" bindtap="naviToLogistics">
+    <image src="/assets/images/express.png"></image>
+    <view>
+      <view>已揽件</view>
+      <view>2018.01.01 24:00:00</view>
+    </view>
+    <icon class="arrow"></icon>
+  </view> -->
+
+  <!--地址-->
+  <view class="order-address">
+    <image class="location" src="/assets/images/location.png"></image>
+    <view class="address-user">
+      <text>收货人：{{detailData.contents.userAddress.realname}}</text>
+      <text>{{detailData.contents.userAddress.mobile}}</text>
+    </view>
+    <text class="address-add">收货地址：{{detailData.contents.userAddress.region}}{{detailData.contents.userAddress.address}}</text>
+  </view>
+
+  <!--商品信息-->
+  <view class="order-select item-space">
+    <image src="{{detailData.contents.goods.img_path}}"></image>
+    <view class="select-option">
+      <text>{{common.titleFr(detailData.contents.goods.product_name,32)}}</text>
+      <view class="option-item">{{detailData.contents.specifications}}</view>
+      <view class="option-item"><text>{{detailData.explain}}</text></view>
+    </view>
+    <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(detailData.contents.goods.selling_price)}}</view>
+    <view class="select-num">X{{detailData.number}}</view>
+  </view>
+
+  <!--订单信息-->
+  <view class="order-item">
+    <text>订单号</text>
+    <view>{{detailData.order_number}}</view>
+  </view>
+  <view class="order-item">
+    <text>购买时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>商品价格</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+  <!-- <view class="order-item">
+    <text>快递费</text>
+    <view><text class="price-unit">¥</text> 8.00</view>
+  </view> -->
+  <view class="order-item item-space">
+    <text>支付方式</text>
+    <view>微信支付</view>
+  </view>
+  <view class="order-item">
+    <text>支付时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>支付金额</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+
+  <!--底部菜单-->
+  <view class="bottom-fixed" style="height: {{btuHeight}}">
+    <view class="bottom-contact">
+      <image class="icon-img" src='/assets/images/contact.png'></image>
+      <button open-type="contact">客服咨询</button>
+    </view>
+    <button class="bottom-confirm" bindtap="confirmOrder" data-id="{{detailData.id}}">确认收货</button>
+    <button class="bottom-apply" bindtap="naviToserviceRights" data-id="{{detailData.id}}">申请售后</button>
+  </view>
+</block>
+
+<!--已取消-->
+<block wx:if="{{detailData.order_status==4 || detailData.order_status==5 || detailData.order_status==7}}">
+  <!--订单状态-->
+  <view class="order-status">
+    <view class="status-msg">
+      <view>{{detailData.status_name}}</view>
+    </view>
+    <image class="cancel" src="/assets/images/order_cancel.png"></image>
+  </view>
+
+  <!--地址-->
+  <view class="order-address">
+    <image class="location" src="/assets/images/location.png"></image>
+    <view class="address-user">
+      <text>收货人：{{detailData.contents.userAddress.realname}}</text>
+      <text>{{detailData.contents.userAddress.mobile}}</text>
+    </view>
+    <text class="address-add">收货地址：{{detailData.contents.userAddress.region}}{{detailData.contents.userAddress.address}}</text>
+  </view>
+
+  <!--商品信息-->
+  <view class="order-select item-space">
+    <image src="{{detailData.contents.goods.img_path}}"></image>
+    <view class="select-option">
+      <text>{{common.titleFr(detailData.contents.goods.product_name,32)}}</text>
+      <view class="option-item">{{detailData.contents.specifications}}</view>
+      <view class="option-item"><text>{{detailData.explain}}</text></view>
+    </view>
+    <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(detailData.contents.goods.selling_price)}}</view>
+    <view class="select-num">X{{detailData.number}}</view>
+  </view>
+
+  <!--订单信息-->
+  <view class="order-item">
+    <text>订单号</text>
+    <view>{{detailData.order_number}}</view>
+  </view>
+  <view class="order-item">
+    <text>购买时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>商品价格</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+  <!-- <view class="order-item">
+    <text>快递费</text>
+    <view><text class="price-unit">¥</text> 8.00</view>
+  </view> -->
+  <view class="order-item item-space">
+    <text>订单金额</text>
+    <view class="colorf41"><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+
+  <!--底部菜单-->
+  <view class="bottom-fixed" style="height: {{btuHeight}}">
+    <view class="bottom-contact">
+      <image class="icon-img" src='/assets/images/contact.png'></image>
+      <button open-type="contact">客服咨询</button>
+    </view>
+    <button class="bottom-apply" bindtap="delOrder" data-id="{{detailData.id}}">删除</button>
+    <button class="bottom-apply" bindtap="naviTomessageResult" data-id="{{detailData.id}}" data-pid="{{detailData.product_order_id}}" wx:if="{{detailData.order_status!=4 && detailData.sales_id && detailData.sales_id!='' }}">售后详情</button>
+  </view>
+</block> 
+
+<!--已完成-->
+<block wx:if="{{detailData.order_status==3 || detailData.order_status==6}}">
+  <!--订单状态-->
+  <view class="order-status">
+    <view class="status-msg">
+      <view>{{detailData.status_name}}</view>
+    </view>
+    <image class="over" src="/assets/images/order_over.png"></image>
+  </view>
+
+  <!--运输状态-->
+  <!-- <view class="order-transport" bindtap="naviToLogistics">
+    <image src="/assets/images/express.png"></image>
+    <view>
+      <view>已揽件</view>
+      <view>2018.01.01 24:00:00</view>
+    </view>
+    <icon class="arrow"></icon>
+  </view> -->
+
+  <!--地址-->
+  <view class="order-address">
+    <image class="location" src="/assets/images/location.png"></image>
+    <view class="address-user">
+      <text>收货人：{{detailData.contents.userAddress.realname}}</text>
+      <text>{{detailData.contents.userAddress.mobile}}</text>
+    </view>
+    <text class="address-add">收货地址：{{detailData.contents.userAddress.region}}{{detailData.contents.userAddress.address}}</text>
+  </view>
+  <view style="width:100%;  padding:0 30rpx; margin-bottom:10rpx; background:#ffffff; overflow:hidden; font-size:28rpx;word-wrap:break-word ">
+    <text wx:for="{{detailData.viList}}" style=" margin: 0 10rpx 0 0;">{{item.code_group}}</text>
+  </view>
+
+  <!--商品信息-->
+  <view class="order-select item-space">
+    <image src="{{detailData.contents.goods.img_path}}"></image>
+    <view class="select-option">
+      <text>{{common.titleFr(detailData.contents.goods.product_name,32)}}</text>
+      <view class="option-item">{{detailData.contents.specifications}}</view>
+      <view class="option-item"><text>{{detailData.explain}}</text></view>
+    </view>
+    <view class="select-price"><text class="price-unit">¥</text>{{common.moneyFr(detailData.contents.goods.selling_price)}}</view>
+    <view class="select-num">X{{detailData.number}}</view>
+  </view>
+
+  <!--订单信息-->
+  <view class="order-item">
+    <text>订单号</text>
+    <view>{{detailData.order_number}}</view>
+  </view>
+  <view class="order-item">
+    <text>购买时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>商品价格</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+  <!-- <view class="order-item">
+    <text>快递费</text>
+    <view><text class="price-unit">¥</text> 8.00</view>
+  </view> -->
+  <view class="order-item item-space">
+    <text>支付方式</text>
+    <view>微信支付</view>
+  </view>
+  <view class="order-item">
+    <text>支付时间</text>
+    <view class="font-airal">{{common.formatTime(detailData.add_time)}}</view>
+  </view>
+  <view class="order-item">
+    <text>支付金额</text>
+    <view><text class="price-unit">¥</text> {{common.moneyFr(detailData.account)}}</view>
+  </view>
+
+  <!--底部菜单-->
+  <view class="bottom-fixed" style="height: {{btuHeight}}">
+    <view class="bottom-contact">
+      <image class="icon-img" src='/assets/images/contact.png'></image>
+      <button open-type="contact">客服咨询</button>
+    </view>
+    <button wx:if="detailData.order_status!=6" class="bottom-apply" bindtap="naviToserviceRights" data-id="{{detailData.id}}">申请售后</button>
+  </view>
+</block>

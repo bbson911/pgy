@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "请选择城市",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

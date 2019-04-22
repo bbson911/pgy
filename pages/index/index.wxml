@@ -1,0 +1,149 @@
+<!--index.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<view id="headerFixed">
+
+  <!--搜索栏-->
+  <view class="search-wrap">
+    <view class="search-location" bindtap='toLocation'>
+        <text style=" float:left; width:60rpx; height:80rpx; overflow:hidden; text-align:center; text-overflow: ellipsis; white-space: nowrap;">{{regionName}}</text>
+        <image src='/assets/images/attention_up.png'></image>
+    </view>
+    <view class="search" bindtap='toSearch'>
+      <image class="icon-search" src="/assets/images/index_search.png"></image>搜索你感兴趣的内容
+    </view>
+  </view>
+  
+  <!--滚动导航栏-->
+  
+  <scroll-view scroll-x="true" class="nav-ul" scroll-into-view="{{toview}}" scroll-with-animation="true" scroll-left="{{scrollLeftSys}}">
+    <view wx:for="{{navList}}" wx:for-index="cellindex" class='nav-li {{cellindex == indexs?"on":""}}' data-index="{{cellindex}}" bindtap="choseTxtColor"  data-id="{{item.id}}">
+      <!-- 热门 -->{{item.name}}
+      <view class="nav-li-underscore"></view>
+    </view>
+     <view  class="nav-li up_more"  bindtap="showNavDrop">
+      <!-- 热门 --><image src="/assets/images/up_more.png"></image>
+    </view>
+  </scroll-view>
+
+</view>
+
+<!--分类下拉列表  -->
+  <block wx:if="{{navDrop==true}}">
+    <view class="noscroll" bindtap="showNavDrop"></view>
+    <view class="nav-drop" bindtap="hideNavDrop">
+      <view class="drop-top">
+        <text>请选择</text>
+        <view class="nav-arrow" bindtap="hideNavDrop">
+          <icon class="arrowUp"></icon>
+        </view>
+      </view>
+      <scroll-view scroll-y="true" class="drop-con">
+        <view class="drop-item">          
+          <view  wx:for="{{navList2}}" wx:for-index="cellindex"  data-index="{{cellindex+1}}" bindtap="choseTxtColor"  data-id="{{item.id}}" data-name="{{item.name}}">
+             <image src='{{item.icon_img}}'></image> 
+            <view>{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+      
+    </view>
+  </block> 
+
+
+
+<scroll-view scroll-y="{{isScroll}}" class="article-ul" bindscrolltolower="lower" scroll-top="{{scrollTop}}" style='padding-bottom:{{btnBottom}}'>
+  <swiper class="swipers" indicator-dots="true" circular="true" autoplay="true" interval="4000" duration="1000" indicator-color="#eaeaea" indicator-active-color="#ff7841" >
+        <swiper-item>    
+          <image  class="banner" bindtap='naviToInvite' src='https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/lite/index/WechatIMG41.jpeg' />    
+        </swiper-item>    
+         <swiper-item>    
+          <image class="banner" src='https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/lite/index/katongshare.jpg' />    
+        </swiper-item>
+    </swiper>   
+   <view class="article-li" bindtap='toContentDetail' data-id='{{item.articleId}}' data-aprs='{{item.ArticleProductRelateId}}' wx:for="{{articleList}}" >
+    <view class="article-header">
+      <!-- <view class="article-avator">
+        <image src='{{item.headimgurl}}'></image>
+      </view>
+        {{item.nickname}} -->
+      <block wx:if="{{item.publish_time}}">
+        <view class="article-time">
+          {{common.releaseTime(item.publish_time)}}
+        </view>
+      </block>
+      <block wx:else>
+        <view class="article-time"></view>
+      </block>
+    </view>
+    <view class="article-body">
+      <view class="article-body-left">
+        <view class="article-title">{{common.titleFr(item.name,26)}}</view>
+      </view>
+      <view class='article-pic' style="background-image: url({{item.img_path285}})">
+      </view>
+    </view>
+    <view class="article-foot">
+      <text class='red' wx:if="{{indexs==0 && item.categoryName!=''}}">{{item.categoryName}}</text>
+      <image class="icon-img" src='/assets/images/eyexx.png'></image>
+      <text>{{item.viewNums}}</text>
+      <image class="icon-img" src='/assets/images/share.png'></image>
+      <text>{{item.shareNums}}</text>
+      <block wx:if="{{item.min_commission!=0}}">
+      <image class="icon-img" src='/assets/images/rmb.png'></image>
+      <text>{{item.min_commission}}/单起</text>
+      </block>
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+</scroll-view>
+
+<!-- 引导层 -->
+ <view class="modal-content modal-guide" wx:if="{{guideStep!=0}}" catchtouchmove='true'>
+  <view class='guide-one' wx:if="{{guideStep==1}}">
+    <image src='https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/lite/guide/5.png?v2'></image>
+    <button bindtap='guideTo' data-next='2'></button>
+  </view>
+  <view class='guide-two' wx:if="{{guideStep==2}}">
+    <image src='https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/lite/guide/6.png?v2'></image>
+    <button bindtap='guideTo' data-next='3'></button>
+  </view>
+  <!-- <view class='guide-three' wx:if="{{guideStep==3}}" style='bottom: {{btnBottom}}'>
+    <image src='https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/lite/guide/3.png?v3'></image>
+    <button bindtap='guideTo' data-next='4'></button>
+  </view> -->
+  <view class='guide-four' wx:if="{{guideStep==3}}" style='bottom: {{btnBottom}}'>
+    <image src='https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/lite/guide/4.png?v3'></image>
+    <button bindtap='guideTo' data-next='0'></button>
+  </view>
+</view> 
+
+<!-- 授权弹窗 -->
+<block wx:if="{{authShow}}">
+<view class="auth-layer">
+  <view class="auth-wrap" >
+    <view class="auth-bg">
+      <image src='/assets/images/auth_bg.png'></image>
+    </view>
+    <view class="auth-content">
+      <view class="auth-txt">
+      授权 <text> 聚焦蒲公英 </text> 获取以下信息为你服务
+      </view>
+      <view class="auth-txt2">
+      · 获取你的公开信息（昵称、头像、性别等）
+      </view>
+      <button class="auth-btn" open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo">同意授权</button>
+    </view>
+  </view>
+</view>
+</block>
+
+<!--底部导航-->
+<footer-nav></footer-nav>

@@ -1,0 +1,49 @@
+/* pages/wallet/wallet.wxss */
+page{
+  background: #f2f2f2;
+}
+
+
+/* 我的钱包头部 */
+.wallet-wrap{
+  width: 100%;
+  height: 210rpx;
+  background: linear-gradient(#ff7841, #ff5941);
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.wallet-title{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 34rpx;
+  margin: 30rpx 0 0 0;
+}
+.wallet-money{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 60rpx;
+}
+.wallet-money text{
+  font-size: 30rpx;
+}
+
+/* 钱包选项 */
+.wallet-option{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  margin: 10rpx 0 0 0;
+  border-bottom: 1px solid #eaeaea;
+}
+.wallet-arrow{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 35rpx 0 0 0;
+}

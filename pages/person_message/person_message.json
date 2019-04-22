@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "留言沟通",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

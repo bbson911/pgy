@@ -1,0 +1,112 @@
+/* pages/fair_addressList/fair_addressList.wxss */
+page{
+  background: #f2f2f2;
+  padding-bottom: 100rpx;
+}
+button::after{
+  border: 0;
+  outline: 0;
+}
+
+/*地址列表*/
+.address-ul{
+  width: 100%;
+  height: auto;
+  font-size: 24rpx;
+  color: #373737;
+}
+.address-li{
+  width: 100%;
+  background: #ffffff;
+  margin-top: 10rpx;
+}
+.address-top{
+  width: 100%;
+  padding: 30rpx;
+  box-sizing: border-box;
+  line-height: 34rpx;
+}
+.address-user{
+  width: 100%;
+  font-size: 28rpx;
+  height: 34rpx;
+  overflow: hidden;
+}
+.address-user .user-name{
+  float: left;
+}
+.address-user .user-tel{
+  float: right;
+}
+.address-detail{
+  width: 100%;
+  margin-top: 20rpx;
+  word-wrap: break-word;
+}
+.address-bottom{
+  width: 100%;
+  height: 70rpx;
+  line-height: 40rpx;
+  padding: 15rpx 30rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #eaeaea;
+}
+.address-default radio{
+  float: left;
+  width: 26rpx;
+  margin-right: 20rpx;
+  margin-top: -2rpx;
+}
+radio .wx-radio-input{
+   border-radius: 50%;
+   width: 26rpx;
+   height: 26rpx;
+}
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: #ff4141;
+}
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;
+   width: 30rpx;
+   height: 30rpx;
+   line-height: 30rpx;
+   text-align: center;
+   background-color: red;
+   font-size: 20rpx;
+   color: #fff;
+    background: #ff4141;
+   transform: translate(-50%, -50%) scale(1);
+   -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.default-text{
+  float: left;
+}
+.address-bottom button{
+  width: 108rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border: 1rpx solid #7e7e7e;
+  text-align: center;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  outline: 0;
+  background: #ffffff;
+  float: right;
+  margin-left: 30rpx;
+}
+
+/*添加地址按钮*/
+.address-add{
+  width: 400rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: #ff894b;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  border: 0;
+  outline: 0;
+  font-size: 34rpx;
+  color: #ffffff;
+  border-radius: 50rpx;
+  margin: 150rpx auto 30rpx;
+}

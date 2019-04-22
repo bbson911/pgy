@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "好友邀请",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "footer-nav": "../../components/footerNav/footerNav"
+  }
+}

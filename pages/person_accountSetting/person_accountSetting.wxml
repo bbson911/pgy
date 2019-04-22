@@ -1,0 +1,86 @@
+<!--pages/person_accountSetting/person_accountSetting.wxml-->
+<wxs src="../../filter/common.wxs" module="common" />
+
+<!-- 账户设置 -->
+<view class='account-setting-wrap'>
+  <view class='account-setting-item'>
+    <view class='account-setting-fl'>昵称</view>
+    <view class='account-setting-fr'>{{nickname}}</view>
+  </view>
+  <view class='account-setting-item'  bindtap='toMobile'>
+    <view class='account-setting-fl'>手机号码</view>
+
+    <block wx:if="{{mobileStatus==2}}" >
+      <view class='account-setting-fr' bindtap="ChangePhone">
+        {{common.mobileFr(mobile)}}
+        <view class='account-setting-arrow'></view>
+      </view>
+    </block>
+    <block wx:else>
+        <view class='account-setting-fr off'>
+        前往绑定
+        <view class='account-setting-arrow'></view>
+        </view>   
+    </block>
+  </view>
+</view>
+
+<view class='account-setting-wrap'>
+
+  <view class='account-setting-item' bindtap='toRealname'>
+    <view class='account-setting-fl'>实名管理</view>
+    <view class='account-setting-fr' wx:if="{{cardStatus==2}}">
+      {{realname}}
+      <view class='account-setting-arrow'></view>
+    </view>
+    <view class='account-setting-fr off' wx:else>
+      请前往实名
+      <view class='account-setting-arrow'></view>
+    </view>
+  </view>
+
+  <view class='account-setting-item' bindtap='toBindCard'>
+    <view class='account-setting-fl'>银行卡</view>
+
+    <block wx:if="{{bankStatus==2}}">
+      <view class='account-setting-fr'>
+        {{bank}} ({{bankcard}})
+        <view class='account-setting-arrow'></view>
+      </view>
+    </block>
+    <block wx:else>  
+      <view class='account-setting-fr off'>
+        前往绑定
+        <view class='account-setting-arrow'></view>
+      </view>
+    </block>
+
+  </view>
+  <view class='account-setting-item' bindtap='toAddress'>
+    <view class='account-setting-fl'>地址管理</view>
+    <view class='account-setting-fr'>
+      <view class='account-setting-arrow'></view>
+    </view>
+  </view>
+</view>
+
+<view class='account-setting-wrap' wx:if="{{mobileStatus==2}}">
+  <block wx:if="{{pwdStatus==2}}">
+    <view class='account-setting-item' bindtap='toPwdFirst'>
+      <view class='account-setting-fl'>修改密码</view>
+      <view class='account-setting-fr'>
+        <view class='account-setting-arrow'></view>
+      </view>
+    </view>
+  </block>
+  <block wx:else>
+    <view class='account-setting-item' bindtap='toPwdNext' data-type='1'>
+      <view class='account-setting-fl'>设置密码</view>
+      <view class='account-setting-fr'>
+        <view class='account-setting-arrow'></view>
+      </view>
+    </view>
+  </block>
+</view>
+
+<!-- <view class='account-quit' bindtap='quit'>安全退出</view>  -->

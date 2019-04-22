@@ -1,0 +1,12 @@
+<!--pages/not_redwars/not_redwars.wxml-->
+<!--无红包  -->
+<view class="no_redwars">
+  <view class="no_redpocket">
+    <image src='/assets/images/red_pocket.png'></image>
+    <view class="no_redtitle">当前没有红包</view>
+  </view>
+  <view class="no_redbutton">
+    <view class="no_redlefts" bindtap='naviToIndexfind'>前往发现</view>
+    <view class="no_redrights" bindtap='naviToIndexRecord'>红包记录</view>
+  </view>
+</view>

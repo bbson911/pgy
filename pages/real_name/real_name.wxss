@@ -1,0 +1,62 @@
+/* pages/real_name/real_name.wxss */
+/* pages/register_bandPhone/register_bandPhone.wxss */
+/*记录*/
+page{
+  background: #f2f2f2;
+}
+button::after{
+  border: 0;
+}
+
+.order-msg,.order-item{
+  width: 100%;
+  line-height: 50rpx;
+  padding: 25rpx 30rpx;
+  font-size: 30rpx;
+  color: #373737;
+  overflow: hidden;
+}
+.order-item{
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.order-item > input{
+  width: 100%;
+}
+
+/*按钮*/
+.button-confirm{
+  width: 400rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  outline: 0;
+  margin: 150rpx auto 40rpx;
+  background: #cfcfcf;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841); 
+  border: 0;
+  color: #ffffff;
+}
+
+.disabled{
+  background: #cfcfcf;
+}
+.phcolor{
+  color: #cfcfcf; 
+}
+.msg_error{
+  padding: 0 30rpx; 
+  color: #ff4141;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  height: 44rpx;
+  box-sizing: border-box;
+}
+.goUp{
+  font-size: 28rpx;
+  text-align: center;
+  color: #373737;
+}

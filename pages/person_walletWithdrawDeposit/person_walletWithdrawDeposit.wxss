@@ -1,0 +1,232 @@
+/* pages/person_walletWithdrawDeposit/person_walletWithdrawDeposit.wxss */
+button::after {
+  border: 0;
+}
+
+.price-unit{
+  font-size: 20rpx;
+}
+
+/* 短信验证码 */
+.card-mask{
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.mask-close{
+  position: absolute;
+  top: 6rpx;
+  right: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.mask-close image{
+  display: block;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 15rpx;
+}
+.card-msg{
+  position: fixed;
+  overflow: hidden;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 556rpx;
+  height: 418rpx;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.card-msg-title{
+  width: 100%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #373737;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.card-mobile{
+  width: 100%;
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: #373737;
+}
+
+.card-code{
+  width: 490rpx;
+  height:100rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.card-data{
+  width: 490rpx;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  left: 30rpx;
+  top: 220rpx;
+}
+.card-nums{
+  float: left;
+  margin: 0 10rpx;
+  border-radius: 5rpx;
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+}
+#inputText{
+  position: absolute;
+  width: 0;
+  height: 0rpx;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  zoom: 9999;
+  color: #ffffff;
+}
+.card-num{
+  float: left;
+  margin: 0 10rpx;
+  border-radius: 5rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 90rpx;
+  border: 1rpx solid #cfcfcf;
+  text-align: center;
+}
+.card-num.on{
+  border: 1px solid #f6de39;
+}
+.card-bottom-txt{
+  font-size: 24rpx;
+  line-height: 100rpx;
+  padding: 0 50rpx;
+}
+.card-code-error{
+  float: left;
+  color: #ff4141;
+}
+
+.card-code-times{
+  float: right;
+  color: #373737;
+}
+
+/* 银行卡 */
+page{
+  background: #f2f2f2;
+}
+
+.card-wrap{
+  width: 690rpx;
+  height: 340rpx;
+  margin: 30rpx auto;
+  overflow: hidden;
+  background-size: 100% 100%;
+}
+
+.card-name{
+  margin: 45rpx 0 0 130rpx;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.card-number{
+  margin: 40rpx 0 0 120rpx;
+  font-size: 38rpx;
+  color: #fff;
+  letter-spacing: 3rpx;
+}
+
+.card-arrow{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 7rpx 20rpx 0 0;
+}
+
+.card-options{
+  position: relative;
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #373737;
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1rpx solid #eaeaea;
+}
+
+.card-all{
+  position: absolute;
+  top: 0;
+  right: 50rpx;
+  font-size: 28rpx;
+  color: #0048cd;
+}
+
+.card-input{
+  width: 470rpx;
+  height: 100rpx;
+  min-height: 100rpx;
+}
+
+.card-tips{
+  width: auto;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 0 30rpx;
+  font-size: 24rpx;
+  color: #373737;
+}
+
+.card-btn{
+  width: 400rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841); 
+  color: #fff;
+  font-size: 34rpx;
+  text-align: center;
+  margin: 100rpx auto 0 auto;
+  border-radius: 70rpx;
+  outline: 0;
+  border: 0;
+}
+
+.card-btn.on{
+  background: linear-gradient(#ff7841,#ff5841);
+}
+
+.card-times{
+  font-size: 24rpx;
+  text-align: center;
+  color: #373737;
+  margin: 15rpx 0 0 0;
+}
+
+.card-record{
+  float: right;
+  font-size: 28rpx;
+  color: #7e7e7e;
+}
+
+.card-right-arrow{
+  float: right;
+  width: 30rpx;
+  height: 30rpx;
+  margin: 35rpx 0 0 10rpx;
+}
+
+.disabled{
+  background: #cfcfcf;
+}

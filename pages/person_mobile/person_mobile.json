@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "更换手机号",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

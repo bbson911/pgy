@@ -1,0 +1,2 @@
+<!--pages/invite_success/invite_success.wxml-->
+<web-view src="{{url}}" bindmessage="msgHandler"></web-view>

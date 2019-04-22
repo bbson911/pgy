@@ -1,0 +1,65 @@
+<!--pages/person_bindBankCard/person_bindBankCard.wxml-->
+
+<view class="order-msg">绑定银行卡</view>
+
+<!-- 实名信息 -->
+<view class="order-item">
+  <text>真实姓名</text>
+  <view>{{realname}}</view>
+</view>
+<view class="order-item">
+  <text>身份证号</text>
+  <view>{{idCard}}</view>
+</view>
+
+<!-- 绑卡信息 -->
+<view class="order-item item-space">
+  <text>银行卡号</text>
+  <view><input type='number' placeholder="请输入银行卡号" bindinput="inputBanknumber" placeholder-class="colorcf"></input></view>
+</view>
+<view class="order-item">
+  <text>开户行</text>
+  <picker bindchange="bindBankChange" value="{{bIndex}}" range="{{bankArr}}" range-key="name">
+    <view class="picker colorcf" wx:if="{{bIndex==-1}}">
+      请选择开户行<icon class="arrow"></icon>
+    </view>
+    <view class="picker" wx:else>
+      {{bankArr[bIndex].name}}<icon class="arrow"></icon>
+    </view>
+  </picker>
+</view>
+<view class="order-item">
+  <text>开户地区</text>
+  <picker mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindRegionColumn" value="{{multiIndex}}" range="{{objectMultiArray}}" range-key="name">  
+    <view class="picker colorcf" wx:if="{{multiIndex==''}}">  
+      请选择开户地区<icon class="arrow"></icon>
+    </view> 
+    <view class="picker" wx:else>  
+      {{objectMultiArray[0][multiIndex[0]].name}}{{objectMultiArray[1][multiIndex[1]].name}}<icon class="arrow"></icon>
+    </view>  
+  </picker> 
+</view>
+
+
+<view class="order-item">
+  <text>开户支行</text>
+  <view class="colorcf" wx:if="{{bIndex==-1 || multiIndex==''}}" bindtap="showSubBank">
+    请选择开户支行<icon class="arrow"></icon>
+  </view>
+  <picker bindchange="bindSubBankChange" value="{{sIndex}}" range="{{subBankArr}}" range-key="name" wx:else>
+    <view class="picker colorcf" wx:if="{{sIndex==-1}}">
+      请选择开户支行<icon class="arrow"></icon>
+    </view>
+    <view class="picker" wx:else>
+      {{subBankArr[sIndex].name}}<icon class="arrow"></icon>
+    </view>
+  </picker>
+  
+</view>
+<view class="order-item">
+  <text>银行预留手机</text>
+  <view><input type='number' placeholder="请输入银行预留手机" bindinput="inputMobile" maxlength="11" placeholder-class="colorcf"></input></view>
+</view>
+<view class="msg_error">{{errMsg}}</view>
+
+<button class="button-confirm {{disabled==true?'disabled':''}}" bindtap="bindBankCard">提交</button>

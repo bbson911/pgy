@@ -1,0 +1,112 @@
+/* pages/person_realName/person_realName.wxss */
+
+page{
+  background: #f2f2f2;
+  color: #373737;
+}
+button::after{
+  border: 0;
+}
+.item-space{
+  margin-top: 10rpx;
+}
+.font-airal{
+  font-family: Arial;
+}
+.colorf41{
+  color: #ff4141;
+}
+.color004{
+  color: #0048cd;
+}
+.phcolor{
+  color: #eaeaea;
+}
+.arrow{
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 3rpx solid #808080;
+  border-right: 3rpx solid #808080;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-left: 5rpx;
+}
+.navigator-hover {
+  background: none;
+  color: #373737;
+}
+
+
+/*记录*/
+.order-item,.order-msg{
+  width: 100%;
+  line-height: 50rpx;
+  padding: 25rpx 30rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.order-item{
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  border-bottom: 1rpx solid #eaeaea;
+}
+.order-item > text:first-child{
+  width: 150rpx;
+}
+.order-item > view:last-child{
+  width: 510rpx;
+  text-align: right;
+}
+.order-item input{
+  line-height: 40rpx;
+  height: 40rpx;
+}
+.order-item > input{
+  width: 100%;
+}
+.order-item > view > input{
+  width: 496rpx;
+}
+
+/*更换手机入口*/
+.change-entry{
+  width: 100%;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  background: #ffffff;
+  font-size: 28rpx;
+}
+.change-entry > navigator{
+  position: relative;
+  width: 100%;
+  border-bottom: 1rpx dashed #cfcfcf;
+}
+.change-entry > navigator:last-child{
+  border: 0;
+}
+.change-entry .arrow{
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+}
+
+
+
+/*按钮*/
+.button-confirm{
+  width: 400rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50rpx;
+  font-size: 34rpx;
+  outline: 0;
+  margin: 150rpx auto 50rpx;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  border: 0;
+  color: #ffffff;
+}
+
+.disabled{
+  background: #cfcfcf;
+}

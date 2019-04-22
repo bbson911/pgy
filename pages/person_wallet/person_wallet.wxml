@@ -1,0 +1,15 @@
+<!--pages/wallet/wallet.wxml-->
+
+<!-- 钱包 -->
+<view class="wallet-wrap">
+  <view class="wallet-title">钱包余额</view>
+  <view class="wallet-money"><text>¥ </text>{{balance}}</view>
+</view>
+
+<!-- 钱包选项 -->
+<view class="wallet-option" bindtap='withdrawShow'>
+提现<image class="wallet-arrow" src='/assets/images/rightArrow.png'></image>
+</view>
+<view class="wallet-option" bindtap="naviToPage" data-url="person_walletDetail">
+我的钱包明细<image class="wallet-arrow" src='/assets/images/rightArrow.png'></image>
+</view>

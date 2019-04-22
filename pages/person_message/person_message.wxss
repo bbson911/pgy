@@ -1,0 +1,172 @@
+/* pages/person_message/person_message.wxss */
+
+page{
+  background: #f2f2f2;
+  padding: 33rpx 30rpx 0;
+  box-sizing: border-box;
+}
+button::after{
+  border: 0;
+}
+.price-unit{
+  font-size: 20rpx;
+}
+
+/*商品信息*/
+.order-select{
+  position: relative;
+  width: 100%;
+  height: 217rpx;
+  padding: 25rpx 30rpx;
+  background: #ffffff;
+  font-size: 24rpx;
+  box-sizing: border-box;
+}
+.order-select > image{
+  width: 167rpx;
+  height: 167rpx;
+  float: left;
+  margin-right: 25rpx;
+}
+.order-select .select-option{
+  width: 405rpx;
+  float: left;
+  line-height: 30rpx;
+}
+
+.order-select .select-option .option-item{
+  font-size: 18rpx;
+  color: #7e7e7e;
+  margin: 10rpx 0;
+}
+.order-select .select-option .option-item > text{
+  margin-right: 30rpx;
+}
+.order-select .select-num{
+  margin-top: 74rpx;
+  float: right;
+}
+.order-select .select-price{
+  position: absolute;
+  bottom: 25rpx;
+  right: 30rpx;
+  font-family: Arial;
+  font-size: 28rpx;
+  color: #ff4141;
+}
+
+/* 聊天记录 */
+.service-chat{
+  font-size: 28rpx;
+  color: #373737;
+  padding-top: 25rpx;
+  padding-bottom: 100rpx;
+}
+.service-chat > view{
+  margin-bottom: 50rpx;
+}
+.service-chat .chat-time{
+  width: 280rpx;
+  line-height: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  margin: 25rpx auto;
+  background: #dddddd;
+  border-radius: 50rpx;
+  color: #ffffff;
+  font-size: 24rpx;
+}
+.service-chat .chat-name{
+  margin: 30rpx 0 20rpx;
+}
+.service-chat .chat-each{
+  position: relative;
+  line-height: 34rpx;
+  display: flex;
+  
+}
+.service-chat .chat-each > image{
+  position: absolute;
+  top: 0;
+  width: 64rpx;
+  height: 64rpx;
+}
+.service-chat .chat-each > icon{
+  width: 10rpx;
+  height: 10rpx;
+  position: absolute;
+  top: 30rpx;
+  transform: rotate(45deg);
+}
+.service-chat .chat-each > view{
+  padding: 16rpx 20rpx;
+  background: #ffffff;
+  max-width: 515rpx;
+}
+.service-chat .chat-left .chat-each{
+  padding-left: 88rpx;
+}
+.service-chat .chat-left .chat-each > image{
+  left: 0;
+}
+.service-chat .chat-left .chat-each > icon{
+  left: 84rpx;
+  background: #ffffff;
+}
+.service-chat .chat-left .chat-each > view{
+  background: #ffffff;
+}
+.service-chat .chat-right .chat-each{
+  padding-right: 88rpx;
+  justify-content: flex-end;
+}
+.service-chat .chat-right .chat-name{
+  text-align: right;
+}
+.service-chat .chat-right .chat-each > image{
+  right: 0;
+}
+.service-chat .chat-right .chat-each > icon{
+  right: 84rpx;
+  background: #ff6a41;
+}
+.service-chat .chat-right .chat-each > view{
+  background: #ff6a41;
+  color: #ffffff;
+}
+
+/* 底部发送消息 */
+.service-send{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 20rpx 20rpx;
+  box-sizing: border-box;
+  background: #f2f2f2;
+}
+.service-send > input{
+  width: 571rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+  border: 1rpx solid #eaeaea;
+  box-sizing: border-box;
+  padding: 0 26rpx;
+  background: #ffffff;
+  font-size: 24rpx;
+  float: left;
+}
+.service-send > button{
+  width: 129rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-radius: 5rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #ffffff;
+  border: 0;
+  outline: 0;
+  background: -webkit-linear-gradient(left, #ff894b, #ff5841);
+  float: right;
+}

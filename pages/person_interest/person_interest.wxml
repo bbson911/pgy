@@ -1,0 +1,53 @@
+<!--pages/person_interest/person_interest.wxml-->
+
+<!--待结算数据-->
+<view class="wait-box">  
+    <view>待结算收益(元)</view>
+    <view>{{waitProfit}}</view>
+    <view  bindtap='interestSearch'>账单查询></view>
+    <!-- <view class="wait-data">   -->
+    <!-- <view class="data-con">
+      <image src="/assets/images/interest_sy.png"></image>
+      <view>待结算收益</view>
+      <view class="font-airal" style="width:226rpx;margin-top:20rpx;"><text>¥</text> {{profit}}</view> 
+    </view> -->
+     
+    <!-- <view class="data-con">
+      <image src="/assets/images/interest_red.png"></image>
+      <view>
+        <view>待结算红包</view>
+        <view class="font-airal"><text>¥</text> 1991.25</view>
+      </view>
+    </view> -->
+    <!-- <view class="data-line"></view> -->
+  <!-- </view> -->
+  <!-- <view class="go-bill" bindtap='interestSearch'>账单查询></view> -->
+</view>
+
+<!--今日数据-->
+<view class="order-item item-space">
+  <text>今日收益</text>
+  <view class="font-airal"><text class="price-unit">¥</text> {{today_profit}}</view>
+</view>
+<!-- <view class="order-item">
+  <text>今日红包</text>
+  <view class="font-airal"><text class="price-unit">¥</text> 199.00</view>
+</view> -->
+<view class="order-item">
+  <text>今日成单量</text>
+  <view class="font-airal">{{today_orderCount}}</view>
+</view>
+
+<!--累计数据-->
+<view class="order-item item-space">
+  <text>累计收益</text>
+  <view class="font-airal"><text class="price-unit">¥</text> {{total_profit}}</view>
+</view>
+<!-- <view class="order-item">
+  <text>累计红包</text>
+  <view class="font-airal"><text class="price-unit">¥</text> 199.00</view>
+</view> -->
+<view class="order-item">
+  <text>累计成单量</text>
+  <view class="font-airal">{{total_orderCount}}</view>
+</view>

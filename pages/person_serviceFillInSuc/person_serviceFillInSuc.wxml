@@ -1,0 +1,47 @@
+<!--pages/person_serviceFillInSuc/person_serviceFillInSuc.wxml-->
+
+<!--订单状态-->
+<view class="service-status">
+  <view class="status-tit">
+    <image src="/assets/images/success2.png"></image>
+    <text>提交成功</text>
+  </view>
+  <view>给您带来的不便尽请谅解</view>
+  <view>蒲公英运营中心已受理，我们将尽快进行回复</view>
+</view>
+
+<!-- 商品信息 -->
+<view class="order-select">
+  <image src="{{detailData.contents.goods.img_path}}"></image>
+  <view class="select-option">
+    <text>{{detailData.contents.goods.goods_name}}</text>
+    <view class="option-item"><text>{{detailData.contents.specifications}}</text></view>
+  </view>
+  <view class="select-price"><text class="price-unit">¥</text> {{detailData.account}}</view>
+  <view class="select-num">X{{detailData.number}}</view>
+</view>
+
+<!-- 退货原因 -->
+<view class="service-item">
+  <text>退货原因</text>
+  <view wx:if="{{detailData.status==1}}">仅退款</view>
+  <view wx:if="{{detailData.status==2}}">换货</view>
+  <view wx:if="{{detailData.status==3}}">退货并退款</view>
+</view>
+
+<!-- 商品问题描述 -->
+<view class="service-item item-qa">
+  <view>商品问题描述</view>
+  <view>{{detailData.reason}}</view>
+  <view>
+    <image wx:for="{{detailData.img}}" wx:key="index" src="{{item.image_path}}"></image>
+  </view>
+</view>
+
+<!-- 返回售后服务 -->
+<button class="back-service" bindtap="backService">返回售后服务</button>
+
+
+
+
+

@@ -1,0 +1,99 @@
+<!--pages/fair/fair.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<view id="headerFixed">
+
+  <!--搜索栏-->
+  <view class="search-wrap">
+    <view class="search-location" bindtap='toLocation'>
+        <text style=" float:left; width:60rpx; height:80rpx; overflow:hidden; text-align:center; text-overflow: ellipsis; white-space: nowrap;">{{regionName}}</text>
+        <image src='/assets/images/attention_up.png'></image>
+    </view>
+    <view class="search" bindtap='toSearch'>
+      <image class="icon-search" src="/assets/images/index_search.png"></image>搜索你想要的东西
+    </view>
+  </view>
+
+</view>
+
+
+ <scroll-view scroll-y="true" bindscroll="scroll" class="scroll-wrap" scroll-top="{{scrollTop}}" bindscrolltolower="lower" scroll-with-animation="true" style="padding-bottom: {{btuBottom}}"> 
+  <view class="banner_image">
+    <block wx:if="{{movies.length==1}}">
+      <image wx:for="{{movies}}" wx:key="index" src="{{item.img_path}}" data-productId="{{item.productId}}" bindtap='naviToGoodsBuy'></image>
+    </block>
+    <!-- 轮播图-->
+    <swiper class="swiper" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="1000" indicator-color="#eaeaea" indicator-active-color="#ff7841"  wx:elif="{{movies.length>1}}">    
+      <block wx:for="{{movies}}" wx:key="index">    
+        <swiper-item>    
+          <image src="{{item.img_path}}" class="slide-image"  mode="aspectFill" data-productId="{{item.productId}}" bindtap='naviToGoodsBuy'/>    
+        </swiper-item>    
+      </block>    
+    </swiper>   
+    <image src="https://jianzhiwangluo.oss-cn-shanghai.aliyuncs.com/855b29a498035a2559ccbbfa44e508bb" wx:else></image>
+  </view>  
+
+  
+
+  <!--滚动导航栏-->
+  <block wx:if="{{navDrop==false}}">
+    <view class="scroll-nav {{scrollTop2>scrollHeight ? 'top-nav' : ''}}">
+      <scroll-view scroll-x="true" class="nav-ul" scroll-into-view="{{toview}}" scroll-with-animation="true" scroll-left="{{scrollLeftSys}}" style="">
+        <view wx:for="{{navList}}" wx:for-index="cellindex" class='nav-li {{cellindex == indexs?"on":""}}' data-index="{{cellindex}}" bindtap="choseTxtColor" data-id="{{item.id}}">
+          {{item.name}}
+          <view class="nav-li-underscore"></view>
+        </view>
+        <view  class="nav-li up_more"  bindtap="showNavDrop"></view>
+      </scroll-view>
+      <view class="nav-arrow" bindtap="showNavDrop">
+        <icon class="arrowDown"></icon>
+      </view>
+    </view>
+  </block>
+
+  <block wx:else>
+    <view class="noscroll" bindtap="showNavDrop"></view> 
+    <view class="nav-drop"  bindtap="hideNavDrop">
+      <view class="drop-top">
+        <text>请选择</text>
+        <view class="nav-arrow" bindtap="hideNavDrop">
+          <icon class="arrowUp"></icon>
+        </view>
+      </view>
+     <scroll-view scroll-y="true" class="drop-con">
+        <view class="drop-item">          
+          <view  wx:for="{{navList2}}" wx:for-index="cellindex"  data-index="{{cellindex+1}}" bindtap="choseTxtColor"  data-id="{{item.id}}">
+             <image src='{{item.icon_img}}'></image> 
+            <view>{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+      
+    </view>
+  </block>
+  
+
+  <!--文章列表-->
+  <view class="article-ul" wx:if="{{hotList.length>0}}">
+    <view class="article-li" bindtap='naviToGoodsBuy' wx:for="{{hotList}}" wx:key="{{index}}" data-productId="{{item.productId}}">
+      <view class='article-pic' style='background-image: url({{item.img_path285}})'>
+        <!--  <image src='{{item.img_path285}}'></image>  -->
+      </view>
+      <view class="article-body">
+        <text class="article-title">{{common.titleFr(item.product_name,24)}}</text>
+        <view class="article-price" wx:if="{{item.min_price!=item.max_price}}"><text class="price-unit">¥</text> {{common.moneyFr(item.min_price)}}-{{common.moneyFr(item.max_price)}}</view>
+        <view class="article-price" wx:if="{{item.min_price==item.max_price}}"><text class="price-unit">¥</text> {{common.moneyFr(item.min_price)}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+</scroll-view> 
+
+<!--底部导航-->
+<footer-nav></footer-nav>

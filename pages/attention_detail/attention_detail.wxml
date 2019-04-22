@@ -1,0 +1,66 @@
+<!--pages/attention_detail/attention_detail.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<!--弹出层  -->
+<movable-view class="movable_viewstyle" style="display:{{modalFlag}}" bindtap='selectClose'> 
+<picker-view mode='selector' range='{{chooseArr}}' indicator-style="height: 50rpx;" style="width: 100%; height:464rpx; text-align:center;z-index:99999;position:fixed;background:white;bottom:0px;" value="{{value}}" bindchange="bindChange">
+    <view class="picker_titles">
+      <view class="navigator_left" bindtap='selectClose'>取消</view>
+      <view class="navigator_right" bindtap='selectTap'>确定</view>
+      <label class="navigator_center">请选择</label>
+  </view>
+    <picker-view-column>
+      <view wx:for="{{days}}"  data-id="{{item.id}}" class="choise_value" >{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+
+</movable-view>
+<!-- 文章列表 -->
+<view class="attention_detail">
+      <view class="attention_list">
+        <view class="attention_body">
+          <view class="attention_left_body">
+            <view class="attention_left_title">{{common.titleFr(name,26)}}</view>
+            <view class="attention_left_content">
+                <image class="icon-img" style="width:25rpx;height:26rpx;" src='/assets/images/eyexx.png'></image>
+                <text>{{showNums}}</text>
+                <image class="icon-img" src='/assets/images/cartxx.png'></image>
+                <text>{{count}}</text>
+                <image class="icon-img" style="width:25rpx;height:25rpx;" src='/assets/images/moneyxx.png'></image>
+                <text>{{common.moneyFr(sum_account)}}</text>
+            </view>
+          </view>
+          <view class="attention_right_body" style="background-image: url({{img_path}})">
+            <!-- <image src='{{img_path}}'></image> -->
+          </view>
+        </view>
+      </view>
+</view>
+  <!--我的收益列表  -->
+  <scroll-view scroll-y class="attention_income">
+    <view class="income_title">
+        <view class="income_title_left">我的收益</view>
+        <!-- <view class="income_title_right" bindtap='showSelect'>
+             {{days[index].name}}
+        </view> -->
+    </view>
+    <view class="income_list" wx:for="{{attentionDetailList}}" wx:if="{{attentionDetailList.length>0}}">
+        <view class="income_list_left">
+            <view class="incomeList_pic"><image src='{{item.headimgurl}}'></image></view>
+            <view class="incomeList_admin">
+               <view>{{item.add_time}}</view>
+               <!-- 04.08 10:00 -->
+               <view class="adminWraps">{{item.nickname}}</view>
+            </view>
+        </view>
+        <view class="income_list_right">          
+          <view>收益</view>
+          <view class="adminMoney">+{{common.moneyFr(item.account)}}</view>
+        </view>
+    </view>
+    <view class="noAbout" wx:if="{{!attentionDetailList.length>0}}" style='min-height: {{btuHeight}}'>
+        <image src="/assets/images/noabout.png"></image>
+        <text>暂无数据</text>
+    </view>
+  </scroll-view>
+  <!--收益更多信息  -->
+  <view class="footer_more" bindtap='naviGetIndex' style='bottom: {{btuBottom}}'>更多收益信息</view>

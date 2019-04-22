@@ -1,0 +1,157 @@
+/* pages/person_walletDetail/person_walletDetail.wxss */
+page{
+  background: #f2f2f2;
+  height: 100%;
+}
+
+/*弹出层  */
+.picker_titles{
+  height:100rpx;
+  line-height:100rpx;
+  border-bottom:1rpx solid #eaeaea;
+  width:100%;
+  position:absolute;
+  z-index:100000;
+  bottom:363rpx;
+  background:#ffffff;
+}
+.navigator_left{
+  position:absolute;
+  left:30rpx;
+  font-size:34rpx;
+  color:#373737;
+}
+.navigator_right{
+  position:absolute;
+  right:30rpx;
+  font-size:34rpx;
+  color:#ff7841;
+  border-radius: 0rpx;
+}
+.navigator_center{
+  position:absolute;
+  text-align: left;
+  left: 324rpx;
+  font-size:34rpx;
+  color:#373737;
+  width: 103rpx;
+}
+.movable_viewstyle{
+  width:100%;
+  background:rgba(0,0,0,0.3);
+  height:100%;
+  position:fixed;
+  top:0rpx;
+  left:0rpx;
+  z-index:999;
+}
+.choise_value{
+  height:80rpx;
+  line-height:75rpx;
+  border:none;
+  font-size:30rpx;
+  width:100%;
+  display:inline-block;
+}
+
+.wallet-filter{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  color: #373737;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: #f2f2f2;
+}
+
+.wallet-filter-right{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+  margin: 30rpx 0 0 0;
+}
+
+/* 明细列表 */
+.wallet-ul{
+  width: 100%;
+  height: 100%;
+  padding-top: 100rpx;
+  box-sizing: border-box;
+}
+
+.wallet-li{
+  width: 100%;
+  height: 120rpx;
+  background: #fff;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  font-size: 24rpx;
+  color: #373737;
+}
+.wallet-left{
+  float: left;
+  text-align: left;
+  margin: 25rpx 0 0 0;
+}
+
+.wallet-right{
+  float: right;
+  text-align: right;
+  margin: 25rpx 0 0 0;
+}
+.green{
+  color: #45bd45;
+}
+.red{
+  color: #ff4141;
+}
+
+
+/* loading */
+.loading{
+  width: 100%;
+  padding: 50rpx 0;
+  
+}
+.loading image{
+  display: block;
+  width: 42rpx;
+  height: 42rpx;
+  margin: 0 auto;
+  animation: circle 0.5s infinite linear;
+}
+@-webkit-keyframes circle{
+  0%{ transform: rotate(0deg); }
+  100%{ transform: rotate(360deg); }
+ }
+
+ /* 没有更多数据 */
+ .noMoreData{
+   width: 100%;
+   text-align: center;
+   font-size: 24rpx;
+   color: #999;
+   line-height: 80rpx;
+   height: 80rpx;
+ }
+
+/* 暂无数据 */
+.noData{
+  padding: 220rpx 0 0 0;
+  text-align: center;
+}
+.noData image{
+  display: block;
+  margin: 0 auto;
+  width: 270rpx;
+  height: 230rpx;
+}
+.noData text{
+  font-size: 28rpx;
+  color: #373737;
+}

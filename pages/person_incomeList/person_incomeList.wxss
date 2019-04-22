@@ -1,0 +1,245 @@
+/* pages/person_icomeList/person_icomeList.wxss */
+page{
+  background: #f2f2f2;
+  height: 100%;
+}
+#headerFixed{
+  position: fixed;
+  top: 0rpx;
+  left:0;
+  right: 0;
+  z-index: 1111;
+}
+.icomeTitle{
+  height: 70rpx;
+  border-bottom: 1rpx solid #eaeaea;
+  background: #ffffff;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 19rpx;
+  box-sizing: border-box;
+}
+/* 暂无数据 */
+.noData{
+  height: 1000rpx;
+  background: #ffffff;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 300rpx;
+  box-sizing: border-box;
+}
+.noData image{
+  display: block;
+  margin: 0 auto;
+  width: 270rpx;
+  height: 230rpx;
+}
+.noData text{
+  font-size: 28rpx;
+  color: #373737;
+}
+.icomeTitle image{
+  width: 31rpx;
+  height: 32rpx;
+}
+.titleAll{
+  float: left;
+  font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  color: #373737;
+}
+.titleIcon{
+  float: right;
+  height: 32rpx;
+  line-height: 32rpx;
+}
+/*收益明细  */
+.view_tops{
+  width: 722rpx;
+  height: 12rpx;
+  background: #cccccc;
+  border-radius: 5px;
+  z-index: 111;
+  margin-top: 24rpx;
+
+}
+.topBg{
+  height: 36rpx;
+  background: #f2f2f2;
+  position: fixed;
+  left: 14rpx;
+  top:70rpx;
+  overflow: hidden;
+  z-index: 1111;
+}
+.icomeallList{
+  width: 690rpx;
+  height: 100%;
+  border-radius: 10rpx;
+  margin:100rpx auto auto auto;
+}
+.icTitle{
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 28rpx;
+  color: #373737;
+  border-bottom: 1px solid #cfcfcf;
+  margin-bottom: 16rpx;
+  overflow: hidden;
+
+}
+.leftFloat{
+  float: left;
+}
+.leftRight{
+  float: right;
+}
+.icTitle text{
+  font-size: 20rpx;
+  color: #373737;
+}
+/*明细列表  */
+.monthIcome{
+  width: 100%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+  min-height: 112rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+  border-bottom: 1rpx dashed #cfcfcf;
+}
+.Ordinary_icome{
+  height: 24rpx;
+  line-height: 24rpx;
+}
+.ordinary_time{
+  line-height: 24rpx;
+  height: 24rpx;
+  margin-top: 23rpx;
+}
+/*已失效  */
+.failure{
+  line-height: 24rpx;
+  height: 24rpx;
+  color: #cfcfcf;
+  text-align: right;
+}
+.failure1{
+  line-height: 24rpx;
+  height: 24rpx;
+  color: #373737;
+  text-align: right;
+}
+.failure_number{
+  line-height: 30rpx;
+  text-align: right;
+  height: 30rpx;
+  font-size: 30rpx;
+  margin-top: 19rpx;
+  color: #7e7e7e;
+  
+}
+.failure_number1{
+  line-height: 30rpx;
+  text-align: right;
+  height: 30rpx;
+  font-size: 30rpx;
+  margin-top: 19rpx;
+  color: #ff4141;
+  
+}
+
+/*待结算  */
+.failures{
+  line-height: 24rpx;
+  height: 24rpx;
+  color: #373737;
+}
+.failure_numbers{
+  line-height: 30rpx;
+  height: 30rpx;
+  font-size: 30rpx;
+  margin-top: 19rpx;
+  color: #ff4141;
+  
+}
+/*结算说明  */
+.income_bottom{
+  font-size: 24rpx;
+  text-align: center;
+  color: #7e7e7e;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+ .icome_top_views{
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 5px #ececec;
+  background: #ffffff;
+  border-radius: 5rpx;
+}
+
+
+/*时间  */
+.movable_viewstyle{
+  width:100%;
+  background:rgba(0,0,0,0.2);
+  height:100%;
+  position:fixed;
+  top:67rpx;
+  left:0rpx;
+  z-index:9999;
+}
+/*弹出层  */
+.picker_titles{
+  height:100rpx;
+  line-height:100rpx;
+  border-bottom:1rpx solid #eaeaea;
+  width:100%;
+  position:absolute;
+  z-index:100000;
+  bottom:363rpx;
+  background:#ffffff;
+}
+.navigator_left{
+  position:absolute;
+  left:30rpx;
+  font-size:34rpx;
+  color:#373737;
+}
+.navigator_right{
+  position:absolute;
+  right:30rpx;
+  font-size:34rpx;
+  color:#ff7841;
+  border-radius: 0rpx;
+}
+.navigator_center{
+  position:absolute;
+  text-align: left;
+  left: 324rpx;
+  font-size:34rpx;
+  color:#373737;
+  width: 103rpx;
+}
+
+.choise_value{
+  height:80rpx;
+  line-height:75rpx;
+  border:none;
+  font-size:30rpx;
+  width:100%;
+  display:inline-block;
+}
+/* loading */
+ .loading{
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+} 

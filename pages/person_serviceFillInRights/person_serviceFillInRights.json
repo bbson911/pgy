@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "发起售后",
+  "backgroundTextStyle": "dark",
+  "navigationBarTextStyle": "black",
+  "navigationBarBackgroundColor": "#fff",
+  "enablePullDownRefresh": false
+}

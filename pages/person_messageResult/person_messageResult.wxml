@@ -1,0 +1,38 @@
+<!--pages/person_message/person_message.wxml-->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+
+<!-- 商品信息 -->
+<view class="order-select">
+  <image src="{{goodsObj.contents.goods.img_path}}"></image>
+  <view class="select-option">
+    <text>{{common.titleFr(goodsObj.contents.goods.product_name,32)}}</text>
+    <view class="option-item"><text>{{goodsObj.contents.specifications}}</text></view>
+  </view>
+  <view class="select-price"><text class="price-unit">¥</text> {{common.moneyFr(goodsObj.account)}}</view>
+  <view class="select-num">X{{goodsObj.number}}</view>
+</view>
+
+<!-- 聊天记录 -->
+<view class="service-chat">
+  <block wx:for="{{messageList}}" wx:key="index" wx:if="{{item.message!=''}}">
+    <view class="chat-time">{{item.update_time}}</view>
+    
+    <view class="chat-left" wx:if="{{item.type=='2'}}">
+      <view class="chat-name">蒲公英售后客服 007</view>
+      <view class="chat-each">
+        <image src="/assets/images/custom_service.png"></image>
+        <icon></icon>
+        <view>{{item.message}}</view>
+      </view>
+    </view>
+    <view class="chat-right" wx:if="{{item.type=='1'}}">
+      <view class="chat-name">{{userName}}</view>
+      <view class="chat-each">
+        <image src="{{headurl}}"></image>
+        <icon></icon>
+        <view>{{item.message}}</view>
+      </view>
+    </view>
+  </block>
+</view>
+

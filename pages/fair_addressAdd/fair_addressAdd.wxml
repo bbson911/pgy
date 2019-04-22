@@ -1,0 +1,39 @@
+<!--pages/fair_addressList/fair_addressList.wxml-->
+<!--表单-->
+<form bindsubmit="formSubmit">
+  <!--姓名-->
+  <view class="section">
+    <view class="section-title">姓名</view>
+    <input type="text" placeholder="请输入您的姓名" value="{{username}}" bindinput="watchUser" />
+  </view>
+
+  <!--联系电话-->
+  <view class="section">
+    <view class="section-title">联系电话</view>
+    <input type="number" placeholder="请输入您的手机号码" value="{{mobile}}" maxlength="11" bindinput="watchMobile" />
+  </view>  
+  <!--所在地区-->
+   <view class="section section-region">
+    <view class="section-title">省市区</view>
+     <picker  mode="multiSelector" bindchange="bindRegionChange" bindcolumnchange="bindRegionColumn" value="{{multiIndex}}" range="{{objectMultiArray}}" range-key="name">
+      <view wx:if="{{multiIndex==''}}" class="choose">请选择</view>
+      <view class="arrow"></view>
+      <view class="picker" wx:if="{{multiIndex != ''}}">{{objectMultiArray[0][multiIndex[0]].name}}{{objectMultiArray[1][multiIndex[1]].name}}{{objectMultiArray[2][multiIndex[2]].name}}</view>
+    </picker> 
+    </view>
+
+
+  <!--详细地址-->
+  <view class="section">
+    <view class="section-title">详细地址</view>
+    <input type="text" placeholder="街道、小区、门牌号" value="{{address}}" bindinput="watchAddress" />
+  </view>
+
+  <!--设为默认地址-->
+  <view class="section section-gap">
+    <view class="section-title">设为默认地址</view>
+    <switch name="switch" bindchange="switchDefault" />
+  </view>
+  
+  <button formType="submit" class="btn-submit" disabled="{{disabled}}">保存</button>
+</form>

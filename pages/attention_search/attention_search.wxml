@@ -1,0 +1,41 @@
+<!--pages/attention_search/attention_search.wxml-->
+<!-- <text>pages/attention_search/attention_search.wxml</text> -->
+<wxs module="common" src="../../filter/common.wxs"></wxs>
+<!--搜索栏-->
+<view class="search-wrap" >
+  <view class="search-box">
+    <image class="icon-search" src="/assets/images/index_search.png"></image>
+    <input type='text' placeholder-style='color: #cfcfcf;' placeholder='请输入文章信息' confirm-type='search' bindinput='searchValue' bindconfirm="showResult" auto-focus></input>
+  </view>
+  <text bindtap='clearSearch'>取消</text>
+</view>
+<!--搜索body-->
+
+<!--关注 文章部分-->
+<scroll-view scroll-y class="attention_article" bindscrolltolower="lower" scroll-top="{{scrollTop}}">
+  <view class="attention_list" bindtap='naviToIndex' wx:for="{{attentionList}}" data-id="{{item.id}}">
+    <view class="attention_body">
+      <view class="attention_left_body">
+        <view class="attention_left_title">{{common.titleFr(item.name,26)}}</view>
+        <view class="attention_left_content">
+            <image class="icon-img" src='/assets/images/eyes.png'></image>
+            <text>{{item.showNums}}</text>
+            <image class="icon-img" src='/assets/images/carts.png'></image>
+            <text>{{item.number}}</text>
+            <image class="icon-img" src='/assets/images/money.png'></image>
+            <text>{{common.moneyFr(item.commission_account)}}</text>
+        </view>
+      </view>
+      <view class="attention_right_body" style="background-image: url({{item.img_path}})">
+      </view>
+    </view>
+  </view>
+  <view class="loading" wx:if="{{loadingStatus}}"><image src='/assets/images/loading.png'></image></view> 
+  <view class="noMoreData" wx:if="{{page!=1 && nodataStatus }}">没有更多数据了</view> 
+  <block wx:if="{{page==1 && nodataStatus}}">
+  <view class="noData">
+    <image src="/assets/images/noabout.png"></image>
+    <text>暂无数据</text>
+  </view>
+  </block>
+</scroll-view>

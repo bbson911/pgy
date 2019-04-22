@@ -1,0 +1,148 @@
+var moneyFr = function(s) {
+
+  s = parseFloat(s);
+  s = s.toString();
+  var reg = getRegExp("[^0-9\.]");
+  if (reg.test(s)) return "0.00";
+    var reg2 = getRegExp("^(\d*)$");
+    s = s.replace(reg2, "$1.");
+    var reg3 = getRegExp("(\d*\.\d\d)\d*");
+    s = (s + "00").replace(reg3, "$1");
+    s = s.replace(".", ",");
+    var re = getRegExp("(\d)(\d{3},)");
+    while (re.test(s))
+      s = s.replace(re, "$1,$2");
+    var re2 = getRegExp(",(\d\d)$");
+      s = s.replace(re2, ".$1");
+    var re3 = getRegExp("^\.");
+      return s.replace(re3, "0.");
+}
+function formatTime(date) {
+  var date = getDate(date * 1000); //如果date为13位不需要乘1000
+  var Y = date.getFullYear() + '-';
+  var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+  var D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' ';
+  var h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':';
+  var m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':';
+  var s = date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds();
+  return Y + M + D +h+m+s;
+}
+
+var releaseTime = function(t) {
+  function timetrans(date) {
+    var date = getDate(date * 1000); //如果date为13位不需要乘1000
+    var Y = date.getFullYear() + '-';
+    var M = (date.getMonth() + 1 < 10 ? (date.getMonth() + 1) : date.getMonth() + 1);
+    var D = (date.getDate() < 10 ?  (date.getDate()) : date.getDate());
+    // var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+    // var D = (date.getDate() < 10 ? '0' + (date.getDate()) : date.getDate()) + ' ';
+    //return Y + M + D;
+    return M+'月' + D+'日';
+  }
+
+  function timetrans2(date) {
+    var date = getDate(date * 1000); //如果date为13位不需要乘1000
+    var m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
+    return h + m;
+  }
+
+  var serviceDate = t;
+  var deviceDate = Math.round(getDate().valueOf() / 1000);
+  var diffTime = deviceDate - serviceDate;
+  //console.log(deviceDate, serviceDate, diffTime)
+  if (0 < diffTime && diffTime <= 15 * 60) {
+    //console.log(diffTime)
+    return "刚刚";
+  } else if (15 * 60 < diffTime && diffTime <= 60 * 60) {
+    return Math.floor(diffTime / (60)) + "分钟前";
+  } else if (60 * 60 < diffTime && diffTime <= 24 * 60 * 60) {
+    return Math.floor(diffTime % 86400 / 3600) + "小时前";
+  } else {
+    return timetrans(serviceDate);
+  }
+
+  // else if (24 * 60 * 60 < diffTime && diffTime <= 24 * 2 * 60 * 60) {
+  //   return "昨天 " + timetrans2(serviceDate);
+  // }
+}
+
+// t1结束时间 为13位不需要乘1000,t2当前时间 
+var timeDiff = function(t1) {
+  t2 = Math.round(getDate().valueOf() / 1000);
+  var diff = (t1 - t2); //console.log(t1, t2, diff);
+  if (diff <= 60) {
+    return '1分钟';
+  }
+  var h = Math.floor(diff / 3600);
+  var m = Math.floor((diff/3600-h)*60);
+  if(h > 0){
+    h = h + '小时';
+  }else{
+    h = '';
+  }
+  if(m > 0){
+    m = m + '分钟';
+  }else{
+    m = '';
+  }
+  return h + m;
+}
+
+var mobileFr = function(phone) {
+  if (phone) {
+    var mobile = phone;
+    var mobile2 = phone;
+    var mobileFr = mobile.slice(0, 3) + "****" + mobile2.slice(7)
+    return mobileFr;
+  }
+
+}
+
+var titleFr = function(title, num) {
+  if(title){
+    var articleTitle = title;
+    if (articleTitle.length > num) {
+      articleTitle = articleTitle.slice(0, num) + '...';
+      return articleTitle;
+    } else {
+      return articleTitle;
+    }
+  }
+  
+}
+
+var bankcardFr = function(bank) {
+  if (bank) {
+    var banks = bank;
+    var bank = banks.slice(0, 4) + "********" + banks.slice(15);
+    return bank;
+  }
+}
+
+var bankcard2Fr = function (bank) {
+  if (bank) {
+    var banks = bank;
+    var bank = banks.slice(0, 4) + " **** **** " + banks.slice(12);
+    return bank;
+  }
+}
+
+var monthFr = function(s) {
+  s = s.split('-')[1] + '月';
+  if (s[0] == 0) {
+    s = s.split('0')[1];
+  } else {}
+
+  return s;
+}
+module.exports = {
+  moneyFr: moneyFr,
+  releaseTime: releaseTime,
+  mobileFr: mobileFr,
+  monthFr: monthFr,
+  bankcardFr: bankcardFr,
+  bankcard2Fr: bankcard2Fr,
+  titleFr: titleFr,
+  formatTime: formatTime,
+  timeDiff: timeDiff,
+};

@@ -1,0 +1,28 @@
+/**app.wxss**/
+view{
+  box-sizing: border-box;
+}
+.fix-iphonex-button{
+  width: 100%;
+  min-height: 1006rpx; 
+  background: #ffffff;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 5px #ececec;
+  border-radius: 5rpx;
+
+}
+.fix-iphonex-buttons{
+  width: 100%;
+   min-height: 1448rpx; 
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 5px #ececec;
+  background: #ffffff;
+  border-radius: 5rpx;
+
+
+}
+
